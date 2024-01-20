@@ -71,6 +71,7 @@ The project that the comment is on, as a [Project](../Project) object.
 ###`#!python delete()` { #delete data-toc-label="delete" }
 
 Deletes the comment. You must be logged in and the owner of the project that the comment is on for this to not throw an error.
+The function will return the status code uppon completion.
 
 **Example:**
 
