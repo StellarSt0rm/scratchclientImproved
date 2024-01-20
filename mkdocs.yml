@@ -1,7 +1,7 @@
-site_name: scratchclient docs
-site_url: https://CubeyTheCube.github.io/scratchclient/
-repo_url: https://github.com/CubeyTheCube/scratchclient
-repo_name: CubeyTheCube/scratchclient
+site_name: scratchclientImproved Docs
+site_url: https://StellarSt0rm.github.io/other/scratchclientImproved
+repo_url: https://github.com/StellarSt0rm/scratchclientImproved
+repo_name: StellarSt0rm/scratchclientImproved
 theme:
   name: material
   palette:

@@ -1,13 +1,13 @@
 # Simultaneous Connections
 
-This shows how to use scratchclient's asynchronous features to have two simulataneous cloud connections to different projects.
+This shows how to use scratchclientImproved's asynchronous features to have two simulataneous cloud connections to different projects.
 
 ```python title="message_passer.py"
 # Passes messages between two projects, a pretty simple concept
 # Both projects have variables called "Request" and "Received"
 
 import asyncio
-from scratchclient import ScratchSession
+from scratchclientImproved import ScratchSession
 
 session = ScratchSession("griffpatch", "hunter2")
 

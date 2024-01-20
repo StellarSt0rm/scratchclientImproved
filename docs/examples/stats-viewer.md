@@ -15,7 +15,7 @@ This is the server code for a "stats viewer" project.
 # of the user who sent the request, a delimiter, and the number of followers.
 
 
-from scratchclient import ScratchSession
+from scratchclientImproved import ScratchSession
 
 session = ScratchSession("griffpatch", "badpassword")
 

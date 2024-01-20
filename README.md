@@ -1,4 +1,4 @@
-# scratchclient
+# scratchclientImproved
 Improved Version Of The Scratch API Wrapper By CubeyTheCube.
 I will mainly fix errors.
 
@@ -13,7 +13,7 @@ Go Yo Your Terminal (Not Your Python Shell) And Execute This Command:
 
 ### Basic Usage
 ```python
-from scratchclient import ScratchSession
+from scratchclientImproved import ScratchSession
 
 session = ScratchSession("UwU", "--uwu--")
 
@@ -27,7 +27,7 @@ print(session.get_studio(29251822).description)
 ```
 ### Cloud Connection
 ```python
-from scratchclient import ScratchSession
+from scratchclientImproved import ScratchSession
 
 session = ScratchSession("griffpatch", "SecurePassword7")
 
@@ -42,6 +42,6 @@ def on_set(variable):
 print(connection.get_cloud_variable("other variable"))
 ```
 
-Documentation is available at <https://cubeythecube.github.io/scratchclient>.
+Documentation is available at <https://StellarSt0rm.github.io/other/scratchclientImproved>.
 
-All bugs should be reported to the [github repository](https://github.com/CubeyTheCube/scratchclient/issues). If you need help or guideance, check out the [forum topic](https://scratch.mit.edu/discuss/topic/506810).
+All bugs should be reported to the [github repository](https://github.com/StellarSt0rm/scratchclientImproved/issues). If you need help or guideance, check out the [forum topic](https://scratch.mit.edu/discuss/topic/506810).

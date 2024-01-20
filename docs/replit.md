@@ -17,9 +17,9 @@ alert(
 
 Then copying the value that flashes on your screen.
 
-Then, to log in to scratchclient, use this code:
+Then, to log in to scratchclientImproved, use this code:
 ```python
-from scratchclient import ScratchSession
+from scratchclientImproved import ScratchSession
 
 session = ScratchSession("username", session_id="session ID here", token="token here")
 ```
