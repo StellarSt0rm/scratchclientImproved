@@ -37,10 +37,10 @@ class ProjectComment:
     def report(self):
         self._client._ensure_logged_in()
 
-        requests.post(
+        return requests.post(
             f"https://api.scratch.mit.edu/proxy/comments/project/{self.project.id}/comment/{self.id}",
             headers=self.project._headers,
-        )
+        ).status_code
 
     def reply(self, content):
         self._client._ensure_logged_in()
@@ -89,14 +89,16 @@ class StudioComment:
 
         if response.status_code == 403:
             raise UnauthorizedException("You are not allowed to do that")
+        else:
+            return response.status_code
 
     def report(self):
         self._client._ensure_logged_in()
 
-        requests.post(
+        return requests.post(
             f"https://api.scratch.mit.edu/proxy/comments/studio/{self.studio.id}/comment/{self.id}",
             headers=self.project._headers,
-        )
+        ).status_code
 
     def reply(self, content):
         self._client._ensure_logged_in()
@@ -150,6 +152,8 @@ class ProfileComment:
 
         if response.status_code == 403:
             raise UnauthorizedException("You are not allowed to do that")
+        else:
+            return response.status_code
 
     def delete(self):
         self._comment_action("del", self.id, self.user, self._client)
