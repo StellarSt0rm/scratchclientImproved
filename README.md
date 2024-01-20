@@ -15,7 +15,7 @@ Go to your terminal (not your python shell) and execute this command:
 ```python
 from scratchclient import ScratchSession
 
-session = ScratchSession("ceebee", "--uwu--")
+session = ScratchSession("UwU", "--uwu--")
 
 # post comments
 session.get_user("Paddle2See").post_comment("OwO")
