@@ -50,12 +50,13 @@ class ProjectComment:
 
         return self.project.post_comment(content, self.id, self.author_id)
 
-    def get_replies(self):
+    # Fix Was Literally Two Lines... (Tested)
+    def get_replies(self, all=False, limit=20, offset=0):
         return get_data_list(
             all,
             limit,
             offset,
-            f"https://api.scratch.mit.edu/projects/{self.project_id}/comments/{self.id}/replies",
+            f"https://api.scratch.mit.edu/users/{self.project.author.username}/projects/{self.project.id}/comments/{self.id}/replies",
             lambda reply: ProjectComment(self.project, reply, self._client),
         )
 
