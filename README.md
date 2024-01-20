@@ -6,12 +6,7 @@ I will mainly fix errors.
 
 Go to your terminal (not your python shell) and execute this command:
 ```bash
-pip install scratchclient
-```
-
-If this didn't work for whatever reason, open your python shell and run the following:
-```python
-import os; os.system("pip install scratchclient")
+# No Idea LOL
 ```
 
 ## Example Usage
