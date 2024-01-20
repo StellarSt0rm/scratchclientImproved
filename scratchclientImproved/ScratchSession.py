@@ -302,11 +302,11 @@ class ScratchSession:
             "password": password,
         }
 
-        response = requests.put(
+        return requests.put(
             "https://scratch.mit.edu/site-api/projects/trashed/empty/",
             headers=self._headers,
             data=json.dumps(data),
-        )
+        ).status_code
 
     def get_own_projects(self, all=False, sort="", filter="all", page=1):
         self._ensure_logged_in()
@@ -432,11 +432,11 @@ class ScratchSession:
         if isinstance(asset, str):
             file_ext = pathlib.Path(asset).suffix
 
-        requests.post(
+        return requests.post(
             f"https://assets.scratch.mit.edu/{hashlib.md5(data).hexdigest()}.{file_ext}",
             headers=self._headers,
             data=data,
-        )
+        ).status_code
 
     def change_country(self, country):
         self._ensure_logged_in()
@@ -446,11 +446,11 @@ class ScratchSession:
             "country": country,
         }
 
-        requests.post(
+        return requests.post(
             "https://scratch.mit.edu/accounts/settings/",
             data=data,
             headers=self._headers,
-        )
+        ).status_code
 
     def change_password(self, old_password, new_password):
         self._ensure_logged_in()
@@ -462,11 +462,11 @@ class ScratchSession:
             "new_password2": new_password,
         }
 
-        requests.post(
+        return requests.post(
             "https://scratch.mit.edu/accounts/password_change/",
             data=data,
             headers=self._headers,
-        )
+        ).status_code
 
     def change_email(self, new_email, password):
         self._ensure_logged_in()
@@ -477,11 +477,11 @@ class ScratchSession:
             "password": password,
         }
 
-        requests.post(
+        return requests.post(
             "https://scratch.mit.edu/accounts/email_change/",
             data=data,
             headers=self._headers,
-        )
+        ).status_code
 
     def change_email_subscription(self, activites=False, teacher_tips=False):
         self._ensure_logged_in()
@@ -495,11 +495,11 @@ class ScratchSession:
         if teacher_tips:
             data["teacher_tips"] = "on"
 
-        requests.post(
+        return requests.post(
             "https://scratch.mit.edu/accounts/settings/update_subscription/",
             data=data,
             headers=self._headers,
-        )
+        ).status_code
 
     def get_backpack(self, all=False, limit=20, offset=0):
         self._ensure_logged_in()
