@@ -24,11 +24,11 @@ class UserProfile:
 
         data = {"bio": content}
 
-        requests.put(
+        return requests.put(
             f"https://scratch.mit.edu/site-api/users/all/{self.username}/",
             data=json.dumps(data),
             headers=self.user._headers,
-        )
+        ).status_code
 
         self.bio = content
 
@@ -40,11 +40,11 @@ class UserProfile:
 
         data = {"status": content}
 
-        requests.put(
+        return requests.put(
             f"https://scratch.mit.edu/site-api/users/all/{self.username}/",
             data=json.dumps(data),
             headers=self.user._headers,
-        )
+        ).status_code
 
         self.status = content
 
@@ -62,11 +62,11 @@ class UserProfile:
             ),
         }
 
-        requests.post(
+        return requests.post(
             f"https://scratch.mit.edu/site-api/users/all/{self.username}/",
             files=files,
             headers=self.user._headers,
-        )
+        ).status_code
 
     def get_featured_project(self):
         data = requests.get(
@@ -94,8 +94,8 @@ class UserProfile:
         project_id = project.id if isinstance(project, (Project, IncompleteProject, RemixtreeProject)) else project
         data = {"featured_project": project_id, "featured_project_label": label_num}
 
-        requests.put(
+        return requests.put(
             f"https://scratch.mit.edu/site-api/users/all/{self.username}/",
             data=json.dumps(data),
             headers=self._headers,
-        )
+        ).status_code
