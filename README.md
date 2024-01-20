@@ -22,6 +22,7 @@ session.get_user("Paddle2See").post_comment("OwO")
 
 # lots of other stuff
 print(session.get_project(450216269).get_comments()[0].content)
+print(session.get_project(450216269).get_comments()[0].get_replies()[0].content)
 print(session.get_studio(29251822).description)
 ```
 ### Cloud Connection
