@@ -29,10 +29,10 @@ class ProjectComment:
         if self._client.username != self.project.author.username:
             raise UnauthorizedException("You are not allowed to do that")
 
-        requests.delete(
+        return requests.delete(
             f"https://api.scratch.mit.edu/proxy/comments/project/{self.project.id}/comment/{self.id}",
             headers=self.project._headers,
-        )
+        ).status_code
 
     def report(self):
         self._client._ensure_logged_in()
@@ -50,7 +50,6 @@ class ProjectComment:
 
         return self.project.post_comment(content, self.id, self.author_id)
 
-    # Fix Was Literally Two Lines... (Tested)
     def get_replies(self, all=False, limit=20, offset=0):
         return get_data_list(
             all,
