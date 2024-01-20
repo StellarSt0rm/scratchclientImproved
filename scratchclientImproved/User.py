@@ -101,6 +101,8 @@ class User:
 
         if response.status_code == 403:
             raise UnauthorizedException("You are not allowed to do that")
+        else:
+            return response.status_code
 
     def delete_comment(self, comment_id):
         return ProjectComment._comment_action(
@@ -116,11 +118,11 @@ class User:
         self._client._ensure_logged_in()
 
         data = {"selected_field": field}
-        requests.post(
+        return requests.post(
             f"https://scratch.mit.edu/site-api/users/all/{self.username}/report",
             headers=self._headers,
             data=json.dumps(data),
-        )
+        ).status_code
 
     def toggle_commenting(self):
         self._client._ensure_logged_in()
@@ -128,10 +130,10 @@ class User:
         if self.username != self._client.username:
             raise UnauthorizedException("You are not allowed to do that")
 
-        requests.post(
+       return requests.post(
             f"https://scratch.mit.edu/site-api/comments/user/{self.username}/toggle-comments/",
             headers=self._headers,
-        )
+        ).status_code
 
     def follow(self):
         self._client._ensure_logged_in()
