@@ -1,9 +1,9 @@
-name: Setup
+name: Release Python Package To PyPI
 on: [ workflow_dispatch ]
 
 jobs:
   build:
-    name: Setup
+    name: Release Python Package To PyPI
     runs-on: ubuntu-latest
 
     steps:
@@ -20,4 +20,11 @@ jobs:
            pip install setuptools
 
        - name: Run Setup
-         run: python ./setup.py
+         run: python ./setup.py sdist bdist_wheel
+      
+       - name: Upload to PyPI
+         uses: pypa/gh-action-pypi-publish@v2.1.4
+         with:
+           user: __token__
+           password: ${{ secrets.PYPI_TOKEN }}
+           repository_url: https://upload.pypi.org/legacy/
