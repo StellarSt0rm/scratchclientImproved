@@ -1,13 +1,15 @@
 import setuptools
 from distutils.core import setup
 
+version = "1.1"
+
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
     name="scratchclientImproved",
     packages=["scratchclientImproved"],
-    version="1.0",
+    version=version,
     license="MIT",
     description="Improved Version Of The Scratch API Wrapper By CubeyTheCube",
     long_description=long_description,
@@ -15,7 +17,7 @@ setup(
     author="StellarSt0rm",
     author_email="stellarst0rm.dev@gmail.com",
     url="https://github.com/StellarSt0rm/scratchclientImproved",
-    download_url="https://github.com/StellarSt0rm/scratchclientImproved/archive/refs/tags/v1.tar.gz",
+    download_url=f"https://github.com/StellarSt0rm/scratchclientImproved/archive/refs/tags/v{version}.tar.gz",
     keywords=["scratch", "api"],
     install_requires=["requests"],
     extras_require={"fast": ["numpy", "wsaccel"]},
