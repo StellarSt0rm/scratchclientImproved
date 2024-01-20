@@ -104,11 +104,11 @@ class Project:
         if self.author.username != self._client.username:
             raise UnauthorizedException("You are not allowed to do that")
 
-        requests.put(
+        return requests.put(
             f"https://projects.scratch.mit.edu/{self.id}",
             headers=self._json_headers,
             data=project,
-        )
+        ).status_code
 
     def get_remixes(self, all=False, limit=20, offset=0):
         return get_data_list(
@@ -260,11 +260,11 @@ class Project:
             image = self.thumbnail_URL
         data = {"notes": reason, "report_category": category, "thumbnail": image}
 
-        requests.post(
+        return requests.post(
             f"https://api.scratch.mit.edu/proxy/comments/project/{self.id}/",
             data=json.dumps(data),
             headers=self._json_headers,
-        )
+        ).status_code
 
     def unshare(self):
         self._client._ensure_logged_in()
@@ -272,10 +272,10 @@ class Project:
         if self.author.username != self._client.username:
             raise UnauthorizedException("You are not allowed to do that")
 
-        requests.put(
+        return requests.put(
             f"https://api.scratch.mit.edu/proxy/projects/{self.id}/unshare/",
             headers=self._json_headers,
-        )
+        ).status_code
 
         self.public = False
 
@@ -285,10 +285,10 @@ class Project:
         if self.author.username != self._client.username:
             raise UnauthorizedException("You are not allowed to do that")
 
-        requests.put(
+        return requests.put(
             f"https://api.scratch.mit.edu/proxy/projects/{self.id}/share/",
             headers=self._json_headers,
-        )
+        ).status_code
 
         self.public = True
 
@@ -300,11 +300,11 @@ class Project:
 
         data = {"visibility": "trshbyusr"}
 
-        requests.put(
+        return requests.put(
             f"https://scratch.mit.edu/site-api/projects/all/{self.id}/",
             data=json.dumps(data),
             headers=self._json_headers,
-        )
+        ).status_code
 
     def restore_deleted(self):
         self._client._ensure_logged_in()
@@ -314,17 +314,17 @@ class Project:
 
         data = {"visibility": "visible"}
 
-        requests.put(
+        return requests.put(
             f"https://scratch.mit.edu/site-api/projects/all/{self.id}/",
             data=json.dumps(data),
             headers=self._json_headers,
-        )
+        ).status_code
 
     def view(self):
-        requests.post(
+        return requests.post(
             f"https://api.scratch.mit.edu/users/{self.author.username}/projects/{self.id}/views/",
             headers=self._headers,
-        )
+        ).status_code
 
     def set_thumbnail(self, file_or_data):
         self._client._ensure_logged_in
@@ -337,11 +337,11 @@ class Project:
             if isinstance(file_or_data, bytes)
             else open(file_or_data, "rb").read()
         )
-        requests.post(
+        return requests.post(
             f"https://scratch.mit.edu/internalapi/project/thumbnail/{self.id}/set",
             data=data,
             headers=self._headers,
-        )
+        ).status_code
 
     def set_title(self, title):
         self._client._ensure_logged_in()
@@ -350,11 +350,11 @@ class Project:
             raise UnauthorizedException("You are not allowed to do that")
 
         data = {"title": title}
-        requests.put(
+        return requests.put(
             f"https://api.scratch.mit.edu/projects/{self.id}/",
             data=json.dumps(data),
             headers=self._json_headers,
-        )
+        ).status_code
 
         self.title = title
 
@@ -365,11 +365,11 @@ class Project:
             raise UnauthorizedException("You are not allowed to do that")
 
         data = {"instructions": instructions}
-        requests.put(
+        return requests.put(
             f"https://api.scratch.mit.edu/projects/{self.id}/",
             data=json.dumps(data),
             headers=self._json_headers,
-        )
+        ).status_code
 
         self.instructions = instructions
 
@@ -380,10 +380,10 @@ class Project:
             raise UnauthorizedException("You are not allowed to do that")
 
         data = {"description": description}
-        requests.put(
+        return requests.put(
             f"https://api.scratch.mit.edu/projects/{self.id}/",
             data=json.dumps(data),
             headers=self._json_headers,
-        )
+        ).status_code
 
         self.description = description
