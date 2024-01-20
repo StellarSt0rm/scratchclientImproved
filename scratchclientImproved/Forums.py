@@ -43,11 +43,11 @@ class ForumSession:
             "AddPostForm": "",
         }
 
-        requests.post(
+        return requests.post(
             f"https://scratch.mit.edu/discuss/{category_id}/topic/add",
             headers=headers,
             files=data,
-        )
+        ).status_code
 
     def post(self, topic_id, content):
         self._client._ensure_logged_in()
@@ -69,6 +69,8 @@ class ForumSession:
 
         if response.status_code == 403:
             raise UnauthorizedException("This topic is closed")
+        else:
+            return response.status_code
 
     def edit_post(self, post_id, content):
         self._client._ensure_logged_in()
@@ -91,6 +93,8 @@ class ForumSession:
 
         if response.status_code == 403:
             raise UnauthorizedException("This post is not yours")
+        else:
+            return response.status_code
 
     def report_post(self, post_id, reason):
         self._client._ensure_logged_in()
@@ -107,11 +111,11 @@ class ForumSession:
             "submit": "",
         }
 
-        requests.post(
+        return requests.post(
             f"https://scratch.mit.edu/discuss/misc/?action=report&post_id={post_id}",
             headers=headers,
             data=data,
-        )
+        ).status_code
 
     def get_post_source(self, post_id):
         return requests.get(
@@ -126,10 +130,10 @@ class ForumSession:
             "referer": f"https://scratch.mit.edu/discuss/topic/{topic_id}/",
         }
 
-        requests.post(
+        return requests.post(
             f"https://scratch.mit.edu/discuss/subscription/topic/{topic_id}/add/",
             headers=headers,
-        )
+        ).status_code
 
     def unfollow_topic(self, topic_id):
         self._client._ensure_logged_in()
@@ -139,10 +143,10 @@ class ForumSession:
             "referer": f"https://scratch.mit.edu/discuss/topic/{topic_id}/",
         }
 
-        requests.post(
+        return requests.post(
             f"https://scratch.mit.edu/discuss/subscription/topic/{topic_id}/delete/",
             headers=headers,
-        )
+        ).status_code
 
     def change_signature(self, signature):
         self._client._ensure_logged_in()
@@ -158,11 +162,11 @@ class ForumSession:
             "update": "",
         }
 
-        requests.post(
+        return requests.post(
             f"https://scratch.mit.edu/discuss/settings/{self._client.username}/",
             headers=headers,
             data=data,
-        )
+        ).status_code
 
     def get_latest_topic_posts(self, topic_id):
         rss_feed = requests.get(
