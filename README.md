@@ -4,7 +4,7 @@ I will mainly fix errors.
 
 ## Installation
 
-Go to your terminal (not your python shell) and execute this command:
+Go Yo Your Terminal (Not Your Python Shell) And Execute This Command:
 ```bash
 # No Idea LOL
 ```
@@ -17,10 +17,10 @@ from scratchclient import ScratchSession
 
 session = ScratchSession("UwU", "--uwu--")
 
-# post comments
+# Post Comments
 session.get_user("Paddle2See").post_comment("OwO")
 
-# lots of other stuff
+# Lots Of Other Stuff
 print(session.get_project(450216269).get_comments()[0].content)
 print(session.get_project(450216269).get_comments()[0].get_replies()[0].content)
 print(session.get_studio(29251822).description)
