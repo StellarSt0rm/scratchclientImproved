@@ -69,6 +69,8 @@ class Studio:
 
         if response.status_code == 403:
             raise UnauthorizedException("You are not allowed to do this")
+        else:
+            return response.status_code
 
     def remove_project(self, project):
         self._client._ensure_logged_in()
@@ -84,6 +86,8 @@ class Studio:
 
         if response.status_code == 403:
             raise UnauthorizedException("You are not allowed to do this")
+        else:
+            return response.status_code
 
     def get_projects(self, all=False, limit=20, offset=0):
         return get_data_list(
@@ -145,6 +149,8 @@ class Studio:
 
         if response.status_code == 403:
             raise UnauthorizedException("You are not allowed to do this")
+        else:
+            return response.status_code
 
     def close_to_public(self):
         self._client._ensure_logged_in()
@@ -156,6 +162,8 @@ class Studio:
 
         if response.status_code == 403:
             raise UnauthorizedException("You are not allowed to do this")
+        else:
+            return response.status_code
 
     def toggle_commenting(self):
         self._client._ensure_logged_in()
@@ -170,6 +178,8 @@ class Studio:
 
         if response.status_code == 403:
             raise UnauthorizedException("You are not allowed to do this")
+        else:
+            return response.status_code
 
     def get_comment(self, comment_id):
         data = requests.get(
@@ -235,6 +245,8 @@ class Studio:
 
         if response.status_code == 403:
             raise UnauthorizedException("You are not allowed to do this")
+        else:
+            return response.status_code
 
     def report_comment(self, comment_id):
         self._client._ensure_logged_in()
@@ -243,11 +255,11 @@ class Studio:
         headers["referer"] = f"https://scratch.mit.edu/studios/{self.id}/comments/"
 
         data = {"id": comment_id}
-        requests.post(
+        return requests.post(
             f"https://scratch.mit.edu/site-api/comments/gallery/{self.id}/rep/",
             headers=headers,
             data=json.dumps(data),
-        )
+        ).status_code
 
     def invite_curator(self, user):
         self._client._ensure_logged_in()
@@ -263,6 +275,8 @@ class Studio:
 
         if response.status_code == 403:
             raise UnauthorizedException("You are not allowed to do this")
+        else:
+            return response.status_code
 
     def accept_curator(self):
         self._client._ensure_logged_in()
@@ -278,6 +292,8 @@ class Studio:
 
         if response.status_code == 403:
             raise UnauthorizedException("You are not allowed to do this")
+        else:
+            return response.status_code
 
     def promote_curator(self, user):
         self._client._ensure_logged_in()
@@ -293,6 +309,8 @@ class Studio:
 
         if response.status_code == 403:
             raise UnauthorizedException("You are not allowed to do this")
+        else:
+            return response.status_code
 
     def transfer_host(self, user, password):
         self._client._ensure_logged_in()
@@ -308,6 +326,8 @@ class Studio:
 
         if response.status_code == 403:
             raise UnauthorizedException("You are not allowed to do this")
+        else:
+            return response.status_code
 
     def set_description(self, content):
         self._client._ensure_logged_in()
@@ -316,11 +336,11 @@ class Studio:
             raise UnauthorizedException("You are not allowed to do this")
 
         data = {"description": content}
-        requests.put(
+        return requests.put(
             f"https://scratch.mit.edu/site-api/galleries/all/{self.id}/",
             headers=self._headers,
             data=json.dumps(data),
-        )
+        ).status_code
         self.description = content
 
     def set_title(self, content):
@@ -330,11 +350,11 @@ class Studio:
             raise UnauthorizedException("You are not allowed to do this")
 
         data = {"title": content}
-        requests.put(
+        return requests.put(
             f"https://scratch.mit.edu/site-api/galleries/all/{self.id}/",
             headers=self._headers,
             data=json.dumps(data),
-        )
+        ).status_code
         self.title = content
 
     def set_thumbnail(self, file_or_data):
@@ -348,11 +368,11 @@ class Studio:
             if isinstance(file_or_data, bytes)
             else open(file_or_data, "rb").read()
         )
-        requests.post(
+        return requests.post(
             f"https://scratch.mit.edu/site-api/galleries/all/{self.id}",
             data=data,
             headers=self._headers,
-        )
+        ).status_code
 
     def delete(self):
         self._client._ensure_logged_in()
@@ -362,8 +382,8 @@ class Studio:
 
         data = {"visibility": "delbyusr"}
 
-        requests.put(
+        return requests.put(
             f"https://scratch.mit.edu/site-api/galleries/all/{self.id}/",
             data=json.dumps(data),
             headers=self._json_headers,
-        )
+        ).status_code
