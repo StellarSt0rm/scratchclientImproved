@@ -6,7 +6,12 @@ I will mainly fix errors.
 
 Go Yo Your Terminal (Not Your Python Shell) And Execute This Command:
 ```bash
-# No Idea LOL
+pip install scratchclientImproved
+```
+
+If this didn't work for whatever reason, open your python shell and run the following:
+```python
+import os; os.system("pip install scratchclientImproved")
 ```
 
 ## Example Usage
@@ -42,6 +47,6 @@ def on_set(variable):
 print(connection.get_cloud_variable("other variable"))
 ```
 
-Documentation is available at <https://StellarSt0rm.github.io/other/scratchclientImproved>.
+Documentation is available at <https://StellarSt0rm.github.io/scratchclientImproved>.
 
 All bugs should be reported to the [github repository](https://github.com/StellarSt0rm/scratchclientImproved/issues). If you need help or guideance, check out the [forum topic](https://scratch.mit.edu/discuss/topic/506810).
