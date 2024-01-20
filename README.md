@@ -1,5 +1,6 @@
 # scratchclient
-A scratch API wrapper for python. 
+Improved Version Of The Scratch API Wrapper By CubeyTheCube.
+I will mainly fix errors.
 
 ## Installation
 
