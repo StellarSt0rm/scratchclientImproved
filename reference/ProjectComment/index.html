@@ -1333,8 +1333,7 @@
 <p>The project that the comment is on, as a <a href="../Project">Project</a> object.</p>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
 <h3 id="delete"><code class="highlight"><span class="n">delete</span><span class="p">()</span></code><a class="headerlink" href="#delete" title="Permanent link">&para;</a></h3>
-<p>Deletes the comment. You must be logged in and the owner of the project that the comment is on for this to not throw an error.
-The function will return the status code upon completion.</p>
+<p>Deletes the comment. You must be logged in and the owner of the project that the comment is on for this to not throw an error.</p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="n">project</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get_project</span><span class="p">(</span><span class="mi">193293231031</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">comment</span> <span class="ow">in</span> <span class="n">project</span><span class="o">.</span><span class="n">get_comments</span><span class="p">(</span><span class="nb">all</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
