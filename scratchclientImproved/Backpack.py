@@ -15,7 +15,7 @@ class BackpackItem:
     def delete(self):
         self._client._ensure_logged_in()
 
-        requests.delete(
+        return requests.delete(
             f"https://backpack.scratch.mit.edu/{self._client.username}/{self.id}",
             headers=self._client._headers,
-        )
+        ).status_code
