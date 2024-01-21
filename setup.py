@@ -24,7 +24,7 @@ setup(
     author="StellarSt0rm",
     author_email="stellarst0rm.dev@gmail.com",
     url="https://github.com/StellarSt0rm/scratchclientImproved",
-    download_url=f"https://github.com/StellarSt0rm/scratchclientImproved/archive/refs/tags/v{version}.tar.gz",
+    download_url=f"https://github.com/StellarSt0rm/scratchclientImproved/archive/refs/tags/{version}.tar.gz",
     keywords=["scratch", "api"],
     install_requires=["requests"],
     extras_require={"fast": ["numpy", "wsaccel"]},
