@@ -8,7 +8,7 @@ theme:
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: cyan
+      primary: light blue
       accent: amber
       toggle:
         icon: material/weather-night
@@ -17,6 +17,8 @@ theme:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
+      primary: light blue
+      accent: amber
       toggle:
         icon: material/weather-sunny
         name: Dark Mode
