@@ -49,4 +49,4 @@ print(connection.get_cloud_variable("other variable"))
 
 Documentation is available at <https://StellarSt0rm.github.io/scratchclientImproved>.
 
-All bugs should be reported to the [github repository](https://github.com/StellarSt0rm/scratchclientImproved/issues). If you need help or guideance, check out the [forum topic](https://scratch.mit.edu/discuss/topic/506810).
+All bugs should be reported to the [Github repository](https://github.com/StellarSt0rm/scratchclientImproved/issues).
