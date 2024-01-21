@@ -3,17 +3,9 @@ site_url: https://StellarSt0rm.github.io/scratchclientImproved
 repo_url: https://github.com/StellarSt0rm/scratchclientImproved
 repo_name: StellarSt0rm/scratchclientImproved
 theme:
-  name: material
   palette:
     primary: cyan
     accent: amber
-    
-    # Palette toggle for light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      toggle:
-        icon: material/weather-sunny
-        name: Dark Mode
 
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
@@ -21,7 +13,14 @@ theme:
       toggle:
         icon: material/weather-night
         name: Light Mode
-        
+    
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Dark Mode
+  
   features:
     - navigation.instant
   icon:
