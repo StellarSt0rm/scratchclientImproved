@@ -1933,8 +1933,9 @@ Will be <code class="highlight"><span class="kc">None</span></code> if the user 
 <p>Empties your trash (your deleted projects). You must be logged in for this to not throw an error.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
-<li><strong>password</strong> (<code class="highlight"><span class="nb">str</span></code>) - The password to your account. It's necessary to authenticate this for obvious reasons.</li>
+<li><strong>password</strong> (<code class="highlight"><span class="nb">str</span></code>) - The password to your account. It's necessary to authenticate this for obvious reasons. Returns a HTTP status code.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="n">session</span><span class="o">.</span><span class="n">get_project</span><span class="p">(</span><span class="mi">104</span><span class="p">)</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
 <span class="n">session</span><span class="o">.</span><span class="n">empty_trash</span><span class="p">(</span><span class="s2">&quot;hunter2&quot;</span><span class="p">)</span>
@@ -1979,42 +1980,47 @@ Will be <code class="highlight"><span class="kc">None</span></code> if the user 
 </ul>
 <p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">list</span><span class="p">[</span><span class="n">Studio</span><span class="p">]</span></code></p>
 <h3 id="upload_asset"><code class="highlight"><span class="n">upload_asset</span><span class="p">(</span><span class="n">asset</span><span class="p">,</span> <span class="n">file_ext</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code><a class="headerlink" href="#upload_asset" title="Permanent link">&para;</a></h3>
-<p>Uploads an asset to <code>assets.scratch.mit.edu</code>. You must be logged in for this to not throw an error.</p>
+<p>Uploads an asset to <code>assets.scratch.mit.edu</code>. You must be logged in for this to not throw an error. Returns a HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>asset</strong> (<code class="highlight"><span class="nb">bytes</span> <span class="o">|</span> <span class="nb">str</span></code>) - The asset that should be uploaded. If it is an instance of <code class="highlight"><span class="nb">bytes</span></code>, it will be interpreted as binary data, but if it is a <code class="highlight"><span class="nb">str</span></code>, it will be intepreted as a path to a file.</li>
 <li><strong>file_ext</strong> (<code class="highlight"><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]</span></code>) - The file extension of the asset. It is only necessary when the <code class="highlight"><span class="n">asset</span></code> parameter is a file name.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="change_country"><code class="highlight"><span class="n">change_country</span><span class="p">(</span><span class="n">country</span><span class="p">)</span></code><a class="headerlink" href="#change_country" title="Permanent link">&para;</a></h3>
 <p>Changes the logged in user's country. You must be logged in for this to not throw an error.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
-<li><strong>country</strong> (<code class="highlight"><span class="nb">str</span></code>) - The country that your country should be changed to.</li>
+<li><strong>country</strong> (<code class="highlight"><span class="nb">str</span></code>) - The country that your country should be changed to. Returns a HTTP status code.</li>
 </ul>
+<p><strong>RETURNS</strong>: <code class="highlight"><span class="nb">int</span></code></p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="n">session</span><span class="o">.</span><span class="n">change_country</span><span class="p">(</span><span class="s2">&quot;Antarctica&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="change_password"><code class="highlight"><span class="n">change_password</span><span class="p">(</span><span class="n">old_password</span><span class="p">,</span> <span class="n">new_password</span><span class="p">)</span></code><a class="headerlink" href="#change_password" title="Permanent link">&para;</a></h3>
-<p>Changes the logged in user's account's password. You must be logged in for this to not throw an error.</p>
+<p>Changes the logged in user's account's password. You must be logged in for this to not throw an error. Returns a HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>old_password</strong> (<code class="highlight"><span class="nb">str</span></code>) - Your account's current password (for authentication).</li>
 <li><strong>new_password</strong> (<code class="highlight"><span class="nb">str</span></code>) - The password you want your account's password to be changed to.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="change_email"><code class="highlight"><span class="n">change_email</span><span class="p">(</span><span class="n">new_email</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span></code><a class="headerlink" href="#change_email" title="Permanent link">&para;</a></h3>
-<p>Changes the logged in user's account's email. You must be logged in for this to not throw an error.</p>
+<p>Changes the logged in user's account's email. You must be logged in for this to not throw an error. Returns a HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>new_emaiil</strong> (<code class="highlight"><span class="nb">str</span></code>) - The email you want your account's email to be changed to.</li>
 <li><strong>password</strong> (<code class="highlight"><span class="nb">str</span></code>) - Your account's password (for authentication).</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="change_email_subscription"><code class="highlight"><span class="n">change_email_subscription</span><span class="p">(</span><span class="n">activities</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">teacher_tips</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code><a class="headerlink" href="#change_email_subscription" title="Permanent link">&para;</a></h3>
-<p>Sets what you will receive emails from Scratch for. You must be logged in for this to not throw an error.</p>
+<p>Sets what you will receive emails from Scratch for. You must be logged in for this to not throw an error. Returns a HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>activities</strong> (<code class="highlight"><span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span></code>) - Whether you'll receive emails for activity ideas for using Scratch at home.</li>
 <li><strong>teacher_tips</strong> (<code class="highlight"><span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span></code>) - Whether you'll receive emails about product updates for using Scratch in educational settings.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="n">session</span><span class="o">.</span><span class="n">change_email_subscription</span><span class="p">(</span><span class="n">teacher_tips</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="c1"># Now I will receive emails about product updates for using Scratch in educational settings</span>
