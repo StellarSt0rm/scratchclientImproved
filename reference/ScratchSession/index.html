@@ -1930,10 +1930,10 @@ Will be <code class="highlight"><span class="kc">None</span></code> if the user 
 <p>Creates a studio. You must be logged in for this to not throw an error. Returns the ID of the studio as an <code class="highlight"><span class="nb">int</span></code>.</p>
 <p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="empty_trash"><code class="highlight"><span class="n">empty_trash</span><span class="p">(</span><span class="n">password</span><span class="p">)</span></code><a class="headerlink" href="#empty_trash" title="Permanent link">&para;</a></h3>
-<p>Empties your trash (your deleted projects). You must be logged in for this to not throw an error.</p>
+<p>Empties your trash (your deleted projects). You must be logged in for this to not throw an error. Returns a HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
-<li><strong>password</strong> (<code class="highlight"><span class="nb">str</span></code>) - The password to your account. It's necessary to authenticate this for obvious reasons. Returns a HTTP status code.</li>
+<li><strong>password</strong> (<code class="highlight"><span class="nb">str</span></code>) - The password to your account. It's necessary to authenticate this for obvious reasons.</li>
 </ul>
 <p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <p><strong>Example:</strong></p>
@@ -1988,10 +1988,10 @@ Will be <code class="highlight"><span class="kc">None</span></code> if the user 
 </ul>
 <p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="change_country"><code class="highlight"><span class="n">change_country</span><span class="p">(</span><span class="n">country</span><span class="p">)</span></code><a class="headerlink" href="#change_country" title="Permanent link">&para;</a></h3>
-<p>Changes the logged in user's country. You must be logged in for this to not throw an error.</p>
+<p>Changes the logged in user's country. You must be logged in for this to not throw an error. Returns a HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
-<li><strong>country</strong> (<code class="highlight"><span class="nb">str</span></code>) - The country that your country should be changed to. Returns a HTTP status code.</li>
+<li><strong>country</strong> (<code class="highlight"><span class="nb">str</span></code>) - The country that your country should be changed to.</li>
 </ul>
 <p><strong>RETURNS</strong>: <code class="highlight"><span class="nb">int</span></code></p>
 <p><strong>Example:</strong></p>
