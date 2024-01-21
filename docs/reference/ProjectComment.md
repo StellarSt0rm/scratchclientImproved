@@ -85,6 +85,8 @@ for comment in project.get_comments(all=True):
 
 Reports the comment. You must be logged in for this to not throw an error.
 
+**RETURNS** - `#!python int` - The HTTP status code of the request.
+
 ###`#!python reply(content)` { #reply data-toc-label="reply" }
 
 Replies to the comment. You must be logged in for this to not throw an error. Returns the reply once it is posted as a [ProjectComment](../ProjectComment).
