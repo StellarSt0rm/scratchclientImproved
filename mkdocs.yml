@@ -4,9 +4,6 @@ repo_url: https://github.com/StellarSt0rm/scratchclientImproved
 repo_name: StellarSt0rm/scratchclientImproved
 theme:
   palette:
-    primary: cyan
-    accent: amber
-
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
