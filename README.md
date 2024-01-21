@@ -1,15 +1,15 @@
 # scratchclientImproved
-Improved Version Of The Scratch API Wrapper By CubeyTheCube.
+Improved version of the Scratch API wrapper by CubeyTheCube.
 I will mainly fix errors.
 
 ## Installation
 
-Go Yo Your Terminal (Not Your Python Shell) And Execute This Command:
+Go to your terminal (Not your Python shell) and execute this command:
 ```bash
 pip install scratchclientImproved
 ```
 
-If this didn't work for whatever reason, open your python shell and run the following:
+If this didn't work for whatever reason, open your Python shell and run the following:
 ```python
 import os; os.system("pip install scratchclientImproved")
 ```
@@ -22,10 +22,10 @@ from scratchclientImproved import ScratchSession
 
 session = ScratchSession("UwU", "--uwu--")
 
-# Post Comments
+# Post comments
 session.get_user("User").post_comment("OwO")
 
-# Lots Of Other Stuff
+# Lots of other stuff!
 print(session.get_project(450216269).get_comments()[0].content)
 print(session.get_project(450216269).get_comments()[0].get_replies()[0].content)
 print(session.get_studio(29251822).description)
