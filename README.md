@@ -2,7 +2,7 @@
 Improved version of the Scratch API wrapper by CubeyTheCube.
 I will mainly fix errors.
 
-Due to migrating the forked repo to a new repo because i had some issues, the `Fix #1` release was lost, it's still available via accessing the tag, or via installing version 1.0
+Due to migrating the forked repo to a new repo because i had some issues, the `Fix #1` release was lost, it's still available via accessing the tag, or via installing version 1.0 (`pip install scratchclientImproved==1.0`)
 
 ## Installation
 
