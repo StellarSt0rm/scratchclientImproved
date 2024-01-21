@@ -3,7 +3,6 @@ from github import Github
 import setuptools, re
 
 repo = Github(None).get_repo("StellarSt0rm/scratchclientImproved")
-#version = re.sub('^v', '', repo.get_tags()[0].name)
 version = repo.get_tags()[0].name
 name = repo.get_latest_release().title
 changelog = repo.get_latest_release().body
@@ -11,7 +10,7 @@ print(f"Newest Version: {version}")
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
-    long_description = f"# {name} | v{version} Changelog\n" + changelog + "\n\n" + long_description
+    long_description = f"# {name} | {version} Changelog\n" + changelog + "\n\n" + long_description
 
 setup(
     name="scratchclientImproved",
