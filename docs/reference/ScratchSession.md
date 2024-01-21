@@ -294,7 +294,9 @@ Empties your trash (your deleted projects). You must be logged in for this to no
 
 **PARAMETERS**
 
-- **password** (`#!python str`) - The password to your account. It's necessary to authenticate this for obvious reasons.
+- **password** (`#!python str`) - The password to your account. It's necessary to authenticate this for obvious reasons. Returns a HTTP status code.
+
+**RETURNS** - `#!python int`
 
 **Example:**
 
@@ -349,12 +351,14 @@ Gets your own studios, sorted in descending order. You must be logged in for thi
 
 ###`#!python upload_asset(asset, file_ext=None)` { #upload_asset data-toc-label="upload_asset" }
 
-Uploads an asset to `assets.scratch.mit.edu`. You must be logged in for this to not throw an error.
+Uploads an asset to `assets.scratch.mit.edu`. You must be logged in for this to not throw an error. Returns a HTTP status code.
 
 **PARAMETERS**
 
 - **asset** (`#!python bytes | str`) - The asset that should be uploaded. If it is an instance of `#!python bytes`, it will be interpreted as binary data, but if it is a `#!python str`, it will be intepreted as a path to a file.
 - **file_ext** (`#!python Optional[str | None]`) - The file extension of the asset. It is only necessary when the `#!python asset` parameter is a file name.
+
+**RETURNS** - `#!python int`
 
 ###`#!python change_country(country)` { #change_country data-toc-label="change_country" }
 
@@ -362,7 +366,9 @@ Changes the logged in user's country. You must be logged in for this to not thro
 
 **PARAMETERS**
 
-- **country** (`#!python str`) - The country that your country should be changed to.
+- **country** (`#!python str`) - The country that your country should be changed to. Returns a HTTP status code.
+
+**RETURNS**: `#!python int`
 
 **Example:**
 
@@ -372,30 +378,36 @@ session.change_country("Antarctica")
 
 ###`#!python change_password(old_password, new_password)` { #change_password data-toc-label="change_password" }
 
-Changes the logged in user's account's password. You must be logged in for this to not throw an error.
+Changes the logged in user's account's password. You must be logged in for this to not throw an error. Returns a HTTP status code.
 
 **PARAMETERS**
 
 - **old_password** (`#!python str`) - Your account's current password (for authentication).
 - **new_password** (`#!python str`) - The password you want your account's password to be changed to.
 
+**RETURNS** - `#!python int`
+
 ###`#!python change_email(new_email, password)` { #change_email data-toc-label="change_email" }
 
-Changes the logged in user's account's email. You must be logged in for this to not throw an error.
+Changes the logged in user's account's email. You must be logged in for this to not throw an error. Returns a HTTP status code.
 
 **PARAMETERS**
 
 - **new_emaiil** (`#!python str`) - The email you want your account's email to be changed to.
 - **password** (`#!python str`) - Your account's password (for authentication).
 
+**RETURNS** - `#!python int`
+
 ###`#!python change_email_subscription(activities=False, teacher_tips=False)` { #change_email_subscription data-toc-label="change_email_subscription" }
 
-Sets what you will receive emails from Scratch for. You must be logged in for this to not throw an error.
+Sets what you will receive emails from Scratch for. You must be logged in for this to not throw an error. Returns a HTTP status code.
 
 **PARAMETERS**
 
 - **activities** (`#!python Optional[bool]`) - Whether you'll receive emails for activity ideas for using Scratch at home.
 - **teacher_tips** (`#!python Optional[bool]`) - Whether you'll receive emails about product updates for using Scratch in educational settings.
+
+**RETURNS** - `#!python int`
 
 **Example:**
 

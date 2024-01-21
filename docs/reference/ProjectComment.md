@@ -70,7 +70,9 @@ The project that the comment is on, as a [Project](../Project) object.
 
 ###`#!python delete()` { #delete data-toc-label="delete" }
 
-Deletes the comment. You must be logged in and the owner of the project that the comment is on for this to not throw an error.
+Deletes the comment. You must be logged in and the owner of the project that the comment is on for this to not throw an error. Returns a HTTP status code.
+
+**RETURNS** - `#!python int`
 
 **Example:**
 
@@ -83,9 +85,9 @@ for comment in project.get_comments(all=True):
 
 ###`#!python report()` { #report data-toc-label="report" }
 
-Reports the comment. You must be logged in for this to not throw an error.
+Reports the comment. You must be logged in for this to not throw an error. Returns a HTTP status code.
 
-**RETURNS** - HTTP status code (`#!python int`)
+**RETURNS** - `#!python int`
 
 ###`#!python reply(content)` { #reply data-toc-label="reply" }
 
