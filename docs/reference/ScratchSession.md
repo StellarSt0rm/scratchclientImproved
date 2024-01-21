@@ -290,11 +290,11 @@ Creates a studio. You must be logged in for this to not throw an error. Returns 
 
 ###`#!python empty_trash(password)` { #empty_trash data-toc-label="empty_trash" }
 
-Empties your trash (your deleted projects). You must be logged in for this to not throw an error.
+Empties your trash (your deleted projects). You must be logged in for this to not throw an error. Returns a HTTP status code.
 
 **PARAMETERS**
 
-- **password** (`#!python str`) - The password to your account. It's necessary to authenticate this for obvious reasons. Returns a HTTP status code.
+- **password** (`#!python str`) - The password to your account. It's necessary to authenticate this for obvious reasons.
 
 **RETURNS** - `#!python int`
 
@@ -362,11 +362,11 @@ Uploads an asset to `assets.scratch.mit.edu`. You must be logged in for this to 
 
 ###`#!python change_country(country)` { #change_country data-toc-label="change_country" }
 
-Changes the logged in user's country. You must be logged in for this to not throw an error.
+Changes the logged in user's country. You must be logged in for this to not throw an error. Returns a HTTP status code.
 
 **PARAMETERS**
 
-- **country** (`#!python str`) - The country that your country should be changed to. Returns a HTTP status code.
+- **country** (`#!python str`) - The country that your country should be changed to.
 
 **RETURNS**: `#!python int`
 
