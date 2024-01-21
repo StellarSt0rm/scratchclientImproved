@@ -5,7 +5,15 @@ repo_name: StellarSt0rm/scratchclientImproved
 theme:
   name: material
   palette:
-    # Palette toggle for dark mode
+    # Automatic
+    - media: "(prefers-color-scheme)"
+      primary: light blue
+      accent: amber
+      toggle:
+        icon: material/brightness-auto
+        name: Dark Mode
+    
+    # Dark Mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: light blue
@@ -14,14 +22,14 @@ theme:
         icon: material/weather-night
         name: Light Mode
     
-    # Palette toggle for light mode
+    # Light Mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: light blue
       accent: amber
       toggle:
         icon: material/weather-sunny
-        name: Dark Mode
+        name: Automatic
   
   features:
     - navigation.instant
