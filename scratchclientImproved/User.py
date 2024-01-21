@@ -130,7 +130,7 @@ class User:
         if self.username != self._client.username:
             raise UnauthorizedException("You are not allowed to do that")
 
-       return requests.post(
+        return requests.post(
             f"https://scratch.mit.edu/site-api/comments/user/{self.username}/toggle-comments/",
             headers=self._headers,
         ).status_code
