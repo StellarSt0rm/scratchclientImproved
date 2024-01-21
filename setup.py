@@ -3,7 +3,8 @@ from github import Github
 import setuptools, re
 
 repo = Github(None).get_repo("StellarSt0rm/scratchclientImproved")
-version = re.sub('^v', '', repo.get_tags()[0].name)
+#version = re.sub('^v', '', repo.get_tags()[0].name)
+version = repo.get_tags()[0].name
 name = repo.get_latest_release().title
 changelog = repo.get_latest_release().body
 print(f"Newest Version: {version}")
