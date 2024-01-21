@@ -23,7 +23,7 @@ from scratchclientImproved import ScratchSession
 session = ScratchSession("UwU", "--uwu--")
 
 # Post comments
-session.get_user("User").post_comment("OwO")
+session.get_user("Begula").post_comment("OwO")
 
 # Lots of other stuff!
 print(session.get_project(450216269).get_comments()[0].content)
