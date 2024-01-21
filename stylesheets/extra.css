@@ -31,3 +31,7 @@
   -webkit-mask-image: var(--md-admonition-icon--fun-fact);
   mask-image: var(--md-admonition-icon--fun-fact);
 }
+
+.md-footer {
+  display: none;
+}
