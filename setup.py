@@ -2,8 +2,7 @@ import setuptools, re, requests
 from distutils.core import setup
 
 version = re.findall(r"v(\d+\.\d+\.\d+)", requests.get("https://github.com/StellarSt0rm/scratchclientImproved/releases/latest").url)[0]
-print(version)
-exit() # TMP, i wanna make sure the version it gets is correct
+print(f"Newest Version: {version}")
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
