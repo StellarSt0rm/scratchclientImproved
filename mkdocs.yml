@@ -8,6 +8,8 @@ theme:
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: cyan
+      accent: amber
       toggle:
         icon: material/weather-night
         name: Light Mode
