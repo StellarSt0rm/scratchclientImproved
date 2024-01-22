@@ -56,7 +56,8 @@ print(session.get_project(104).get_comments()[0].created_timestamp)
 An [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) timestamp representing the date the comment was last modified.
 
 !!! note
-    I have no idea what the hell this means.
+    ~~I have no idea what the hell this means.~~
+    It's an international standard covering the worldwide exchange and communication of date and time-related data. And it's maintained by the **International Organization for Standardization** (ISO).
 
 ###`#!python visible : bool` { #visible data-toc-label="visible" }
 
