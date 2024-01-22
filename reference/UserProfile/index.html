@@ -1303,11 +1303,12 @@
 </code></pre></div>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
 <h3 id="set_bio"><code class="highlight"><span class="n">set_bio</span><span class="p">(</span><span class="n">content</span><span class="p">)</span></code><a class="headerlink" href="#set_bio" title="Permanent link">&para;</a></h3>
-<p>Sets the bio ("About Me" section) of the user's profile to the specified content. You must be logged in and the owner of the profile for this to not throw an error.</p>
+<p>Sets the bio ("About Me" section) of the user's profile to the specified content. You must be logged in and the owner of the profile for this to not throw an error. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>content</strong> (<code class="highlight"><span class="nb">str</span></code>) - The content that you want to set the bio to.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="n">profile</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">profile</span>
 
@@ -1316,17 +1317,19 @@
 <span class="c1"># I love Scratch :D</span>
 </code></pre></div>
 <h3 id="set_status"><code class="highlight"><span class="n">set_status</span><span class="p">(</span><span class="n">content</span><span class="p">)</span></code><a class="headerlink" href="#set_status" title="Permanent link">&para;</a></h3>
-<p>Sets the status ("What I'm Working On" section) of the user's profile to the specified content. You must be logged in and the owner of the profile for this to not throw an error.</p>
+<p>Sets the status ("What I'm Working On" section) of the user's profile to the specified content. You must be logged in and the owner of the profile for this to not throw an error. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>content</strong> (<code class="highlight"><span class="nb">str</span></code>) - The content that you want to set the status to.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="set_avatar"><code class="highlight"><span class="n">set_avatar</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></code><a class="headerlink" href="#set_avatar" title="Permanent link">&para;</a></h3>
-<p>Sets the user's avatar (profile picture) to the file with the specified <code class="highlight"><span class="n">filename</span></code>. You must be logged in and the owner of the profile for this to not throw an error.</p>
+<p>Sets the user's avatar (profile picture) to the file with the specified <code class="highlight"><span class="n">filename</span></code>. You must be logged in and the owner of the profile for this to not throw an error. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>filename</strong> (<code class="highlight"><span class="nb">str</span></code>) - The path to a file containing the avatar image. Note that this must be a file, not binary data; if you wish to use binary data, you could try writing the data to a temporary file, then deleting it afterwards.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="get_featured_project"><code class="highlight"><span class="n">get_featured_project</span><span class="p">()</span></code><a class="headerlink" href="#get_featured_project" title="Permanent link">&para;</a></h3>
 <p>Retrieves the featured project of the user. Returns an <a href="../IncompleteProject">IncompleteProject</a> object representing the project.</p>
 <p><strong>RETURNS</strong> - <code class="highlight"><span class="n">IncompleteProject</span></code></p>
@@ -1335,7 +1338,7 @@
 <span class="c1"># 10128407</span>
 </code></pre></div>
 <h3 id="set_featured_project"><code class="highlight"><span class="n">set_featured_project</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">project</span><span class="p">)</span></code><a class="headerlink" href="#set_featured_project" title="Permanent link">&para;</a></h3>
-<p>Sets the user's featured project on their profile. You must be logged in and the owner of the profile for this to not throw an error.</p>
+<p>Sets the user's featured project on their profile. You must be logged in and the owner of the profile for this to not throw an error. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>label</strong> (<code class="highlight"><span class="nb">str</span></code>) - The label to go above the featured project. Must be one of the following strings:<ul>
@@ -1349,6 +1352,7 @@
 </li>
 <li><strong>project</strong> (<code class="highlight"><span class="nb">int</span> <span class="o">|</span> <span class="n">Project</span> <span class="o">|</span> <span class="n">IncompleteProject</span> <span class="o">|</span> <span class="n">RemixtreeProject</span></code>) - The project to be set as the featured project. This must either be an <code class="highlight"><span class="nb">int</span></code> representing the project's ID or a corresponding project object.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="n">session</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">profile</span><span class="o">.</span><span class="n">set_featured_project</span><span class="p">(</span><span class="s2">&quot;why_i_scratch&quot;</span><span class="p">,</span> <span class="mi">321079301972</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">session</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">profile</span><span class="o">.</span><span class="n">get_featured_project</span><span class="p">())</span>

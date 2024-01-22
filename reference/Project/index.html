@@ -2013,11 +2013,12 @@
 <span class="c1"># The first sprite is called &#39;girl&#39;</span>
 </code></pre></div>
 <h3 id="save"><code class="highlight"><span class="n">save</span><span class="p">(</span><span class="n">project</span><span class="p">)</span></code><a class="headerlink" href="#save" title="Permanent link">&para;</a></h3>
-<p>Saves the project with the scripts specified in the parameter <code class="highlight"><span class="n">project</span></code>.</p>
+<p>Saves the project with the scripts specified in the parameter <code class="highlight"><span class="n">project</span></code>. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>project</strong> (<code class="highlight"><span class="nb">dict</span></code>) - The scripts to be put in the project, with the same format as the <code>project.json</code> file found in ordinary projects.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="get_remixes"><code class="highlight"><span class="n">get_remixes</span><span class="p">(</span><span class="nb">all</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span></code><a class="headerlink" href="#get_remixes" title="Permanent link">&para;</a></h3>
 <p>Gets a list of remixes of the project. Returns an array of <a href="../Project">Project</a> objects.</p>
 <p><strong>PARAMETERS</strong></p>
@@ -2122,7 +2123,7 @@
 <span class="n">project</span><span class="o">.</span><span class="n">turn_off_commenting</span><span class="p">()</span>
 </code></pre></div>
 <h3 id="report"><code class="highlight"><span class="n">report</span><span class="p">(</span><span class="n">category</span><span class="p">,</span> <span class="n">reason</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code><a class="headerlink" href="#report" title="Permanent link">&para;</a></h3>
-<p>Reports the project, for the specified <code class="highlight"><span class="n">category</span></code> and <code class="highlight"><span class="n">reason</span></code>. You must be logged in for this to not throw an error.</p>
+<p>Reports the project, for the specified <code class="highlight"><span class="n">category</span></code> and <code class="highlight"><span class="n">reason</span></code>. You must be logged in for this to not throw an error. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>category</strong> (<code class="highlight"><span class="nb">str</span></code>) - The category of reasons that the rules were broken with the project. Possible valid values are the following:<ul>
@@ -2148,42 +2149,52 @@
 <li><strong>reason</strong> (<code class="highlight"><span class="nb">str</span></code>) - Additional info regarding the location of the offending content within the project.</li>
 <li><strong>image</strong> (<code class="highlight"><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]</span></code>) - The base-64-encoded thumbnail of the project.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="n">session</span><span class="o">.</span><span class="n">get_project</span><span class="p">(</span><span class="mi">104</span><span class="p">)</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="s2">&quot;10&quot;</span><span class="p">,</span> <span class="s2">&quot;the guy&#39;s face is in the project&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="unshare"><code class="highlight"><span class="n">unshare</span><span class="p">()</span></code><a class="headerlink" href="#unshare" title="Permanent link">&para;</a></h3>
-<p>Unshares the project. You must be logged in, and the owner of the project, for this to not throw an error.</p>
+<p>Unshares the project. You must be logged in, and the owner of the project, for this to not throw an error. Returns an HTTP status code.</p>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="share"><code class="highlight"><span class="n">share</span><span class="p">()</span></code><a class="headerlink" href="#share" title="Permanent link">&para;</a></h3>
-<p>Shares the project. You must be logged in, and the owner of the project, for this to not throw an error.</p>
+<p>Shares the project. You must be logged in, and the owner of the project, for this to not throw an error. Returns an HTTP status code.</p>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="delete"><code class="highlight"><span class="n">delete</span><span class="p">()</span></code><a class="headerlink" href="#delete" title="Permanent link">&para;</a></h3>
-<p>Deletes the project. You must be logged in, and the owner of the project, for this to not throw an error.</p>
+<p>Deletes the project. You must be logged in, and the owner of the project, for this to not throw an error. Returns an HTTP status code.</p>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="restore_deleted"><code class="highlight"><span class="n">restore_deleted</span><span class="p">()</span></code><a class="headerlink" href="#restore_deleted" title="Permanent link">&para;</a></h3>
-<p>Restores the project if it has been deleted. You must be logged in, and the owner of the project, for this to not throw an error.</p>
+<p>Restores the project if it has been deleted. You must be logged in, and the owner of the project, for this to not throw an error. Returns an HTTP status code.</p>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="view"><code class="highlight"><span class="n">view</span><span class="p">()</span></code><a class="headerlink" href="#view" title="Permanent link">&para;</a></h3>
-<p>Views the project (increments its view count).</p>
+<p>Views the project (increments its view count). Returns an HTTP status code.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This is incredibly easy to abuse, but do not as the Scratch Team will not be happy, and they will be able to figure out who you are. Furthermore, this is heavily ratelimited, so it's not very effective anyway.</p>
 </div>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="set_thumbnail"><code class="highlight"><span class="n">set_thumbnail</span><span class="p">(</span><span class="n">file_or_data</span><span class="p">)</span></code><a class="headerlink" href="#set_thumbnail" title="Permanent link">&para;</a></h3>
-<p>Sets the thumbnail of the project. You must be logged in, and the owner of the project, for this to not throw an error.</p>
+<p>Sets the thumbnail of the project. You must be logged in, and the owner of the project, for this to not throw an error. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <p><strong>file_or_data</strong> (<code class="highlight"><span class="nb">bytes</span> <span class="o">|</span> <span class="nb">str</span></code>) - The file that the thumbnail should be set to. If this is a <code class="highlight"><span class="nb">str</span></code>, then it will be interpreted as a path to a file; otherwise, it will be interpreted as the data in the image.</p>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="set_title"><code class="highlight"><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span></code><a class="headerlink" href="#set_title" title="Permanent link">&para;</a></h3>
-<p>Sets the title of the project. You must be logged in, and the owner of the project, for this to not throw an error.</p>
+<p>Sets the title of the project. You must be logged in, and the owner of the project, for this to not throw an error. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <p><strong>title</strong> (<code class="highlight"><span class="nb">str</span></code>) - The title that the title of the project should be set to.</p>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="n">session</span><span class="o">.</span><span class="n">get_project</span><span class="p">(</span><span class="mi">130921903123</span><span class="p">)</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;4D platformer #games #all ?mode=trending&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="set_instructions"><code class="highlight"><span class="n">set_instructions</span><span class="p">(</span><span class="n">instructions</span><span class="p">)</span></code><a class="headerlink" href="#set_instructions" title="Permanent link">&para;</a></h3>
-<p>Sets the instructions of the project. You must be logged in, and the owner of the project, for this to not throw an error.</p>
+<p>Sets the instructions of the project. You must be logged in, and the owner of the project, for this to not throw an error. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <p><strong>instructions</strong> (<code class="highlight"><span class="nb">str</span></code>) - The instructions that the instructions of the project should be set to.</p>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="set_description"><code class="highlight"><span class="n">set_description</span><span class="p">(</span><span class="n">description</span><span class="p">)</span></code><a class="headerlink" href="#set_description" title="Permanent link">&para;</a></h3>
-<p>Sets the description (the "Notes and Credits" field) of the project.</p>
+<p>Sets the description (the "Notes and Credits" field) of the project. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <p><strong>description</strong> (<code class="highlight"><span class="nb">str</span></code>) - The description that the description of the project should be set to. You must be logged in, and the owner of the project, for this to not throw an error.</p>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 
 
 

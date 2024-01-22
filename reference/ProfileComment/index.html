@@ -828,9 +828,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#replycontent-reply-data-toc-labelreply" class="md-nav__link">
+  <a href="#reply" class="md-nav__link">
     <span class="md-ellipsis">
-      reply(content) { #reply data-toc-label="reply"
+      reply
     </span>
   </a>
   
@@ -1278,9 +1278,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#replycontent-reply-data-toc-labelreply" class="md-nav__link">
+  <a href="#reply" class="md-nav__link">
     <span class="md-ellipsis">
-      reply(content) { #reply data-toc-label="reply"
+      reply
     </span>
   </a>
   
@@ -1339,16 +1339,18 @@
 <p>The username of the user whose profile the comment is on.</p>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
 <h3 id="delete"><code class="highlight"><span class="n">delete</span><span class="p">()</span></code><a class="headerlink" href="#delete" title="Permanent link">&para;</a></h3>
-<p>Deletes the comment. You must be logged in and the owner of the profile the comment is on for this to not throw an error.</p>
+<p>Deletes the comment. You must be logged in and the owner of the profile the comment is on for this to not throw an error. Returns an HTTP status code.</p>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="report"><code class="highlight"><span class="n">report</span><span class="p">()</span></code><a class="headerlink" href="#report" title="Permanent link">&para;</a></h3>
-<p>Reports the comment. You must be logged in for this to not throw an error.</p>
-<h3 id="replycontent-reply-data-toc-labelreply"><code class="highlight"><span class="n">reply</span><span class="p">(</span><span class="n">content</span><span class="p">)</span></code> { #reply data-toc-label="reply"<a class="headerlink" href="#replycontent-reply-data-toc-labelreply" title="Permanent link">&para;</a></h3>
-<p>}</p>
-<p>Replies to the comment. You must be logged in for this to not throw an error.</p>
+<p>Reports the comment. You must be logged in for this to not throw an error. Returns an HTTP status code.</p>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
+<h3 id="reply"><code class="highlight"><span class="n">reply</span><span class="p">(</span><span class="n">content</span><span class="p">)</span></code><a class="headerlink" href="#reply" title="Permanent link">&para;</a></h3>
+<p>Replies to the comment. You must be logged in for this to not throw an error. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>content</strong> (<code class="highlight"><span class="nb">str</span></code>) - The content of your reply.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="n">comment</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">scraping</span><span class="o">.</span><span class="n">get_profile_comments</span><span class="p">(</span><span class="s2">&quot;griffpatch&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">comment</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span><span class="s2">&quot;Go away&quot;</span><span class="p">)</span>

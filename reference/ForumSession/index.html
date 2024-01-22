@@ -1210,40 +1210,44 @@
 <h1 id="forumsession"><strong>ForumSession</strong><a class="headerlink" href="#forumsession" title="Permanent link">&para;</a></h1>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
 <h3 id="create_topic"><code class="highlight"><span class="n">create_topic</span><span class="p">(</span><span class="n">category_id</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">body</span><span class="p">)</span></code><a class="headerlink" href="#create_topic" title="Permanent link">&para;</a></h3>
-<p>Creates a forum topic. You must be logged in for this to not throw an error.</p>
+<p>Creates a forum topic. You must be logged in for this to not throw an error. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>category_id</strong> (<code class="highlight"><span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span></code>) - The ID of the forum category you want to post in. For example, the ID of the "Suggestions" category is <code class="highlight"><span class="mi">31</span></code>.</li>
 <li><strong>title</strong> (<code class="highlight"><span class="nb">str</span></code>) - The title of the original post in the topic.</li>
 <li><strong>body</strong> (<code class="highlight"><span class="nb">str</span></code>) - The body of the original post in the topic.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="n">session</span><span class="o">.</span><span class="n">forums</span><span class="o">.</span><span class="n">create_topic</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Add like button to comments&quot;</span><span class="p">,</span> <span class="s2">&quot;Title.</span><span class="se">\n</span><span class="s2">Supporters:</span><span class="se">\n\n</span><span class="s2">Nobody yet!&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="post"><code class="highlight"><span class="n">post</span><span class="p">(</span><span class="n">topic_id</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span></code><a class="headerlink" href="#post" title="Permanent link">&para;</a></h3>
-<p>Posts a forum post on the specified topic.</p>
+<p>Posts a forum post on the specified topic. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>topic_id</strong> (<code class="highlight"><span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span></code>) - The ID of the topic you want to post on.</li>
 <li><strong>content</strong> (<code class="highlight"><span class="nb">str</span></code>) - The content of the post.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="n">session</span><span class="o">.</span><span class="n">forums</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="mi">506810</span><span class="p">,</span> <span class="s2">&quot;This sucks&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="edit_post"><code class="highlight"><span class="n">edit_post</span><span class="p">(</span><span class="n">post_id</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span></code><a class="headerlink" href="#edit_post" title="Permanent link">&para;</a></h3>
-<p>Edits the forum post with the specified ID.</p>
+<p>Edits the forum post with the specified ID. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>post_id</strong> (<code class="highlight"><span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span></code>) - The ID of the post you want to edit.</li>
 <li><strong>content</strong> (<code class="highlight"><span class="nb">str</span></code>) - The new content of the post.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="report_post"><code class="highlight"><span class="n">report_post</span><span class="p">(</span><span class="n">post_id</span><span class="p">,</span> <span class="n">reason</span><span class="p">)</span></code><a class="headerlink" href="#report_post" title="Permanent link">&para;</a></h3>
-<p>Reports the forum post with the specified ID.</p>
+<p>Reports the forum post with the specified ID. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>post_id</strong> (<code class="highlight"><span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span></code>) - The ID of the post you want to report.</li>
 <li><strong>reason</strong> (<code class="highlight"><span class="nb">str</span></code>) - The reason you want to report the post.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="get_post_source"><code class="highlight"><span class="n">get_post_source</span><span class="p">(</span><span class="n">post_id</span><span class="p">)</span></code><a class="headerlink" href="#get_post_source" title="Permanent link">&para;</a></h3>
 <p>Gets the BBCode source of the forum post with the specified ID.</p>
 <p><strong>PARAMETERS</strong></p>
@@ -1252,23 +1256,26 @@
 </ul>
 <p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">str</span></code></p>
 <h3 id="follow_topic"><code class="highlight"><span class="n">follow_topic</span><span class="p">(</span><span class="n">topic_id</span><span class="p">)</span></code><a class="headerlink" href="#follow_topic" title="Permanent link">&para;</a></h3>
-<p>Follows the forum topic with the specified ID.</p>
+<p>Follows the forum topic with the specified ID. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>topic</strong> (<code class="highlight"><span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span></code>) - The ID of the topic you want to follow.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="unfollow_topic"><code class="highlight"><span class="n">unfollow_topic</span><span class="p">(</span><span class="n">topic_id</span><span class="p">)</span></code><a class="headerlink" href="#unfollow_topic" title="Permanent link">&para;</a></h3>
-<p>Unfollows the forum topic with the specified ID.</p>
+<p>Unfollows the forum topic with the specified ID. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>topic</strong> (<code class="highlight"><span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span></code>) - The ID of the topic you want to unfollow.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="change_signature"><code class="highlight"><span class="n">change_signature</span><span class="p">(</span><span class="n">signature</span><span class="p">)</span></code><a class="headerlink" href="#change_signature" title="Permanent link">&para;</a></h3>
-<p>Changes your forum signature to a new signature.</p>
+<p>Changes your forum signature to a new signature. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>signature</strong> (<code class="highlight"><span class="nb">str</span></code>) - The signature you want to change your signature to.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="get_latest_topic_posts"><code class="highlight"><span class="n">get_latest_topic_posts</span><span class="p">(</span><span class="n">topic_id</span><span class="p">)</span></code><a class="headerlink" href="#get_latest_topic_posts" title="Permanent link">&para;</a></h3>
 <p>Gets the latest posts on the specified forum topic. Returns an array of <a href="../ForumPost">ForumPost</a> objects.</p>
 <p><strong>PARAMETERS</strong></p>

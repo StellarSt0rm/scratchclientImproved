@@ -1844,17 +1844,19 @@
 <span class="c1"># I was born there</span>
 </code></pre></div>
 <h3 id="add_project"><code class="highlight"><span class="n">add_project</span><span class="p">(</span><span class="n">project</span><span class="p">)</span></code><a class="headerlink" href="#add_project" title="Permanent link">&para;</a></h3>
-<p>Adds a project to the studio. You must be logged in and have permission to add projects to the studio for this to not throw an error.</p>
+<p>Adds a project to the studio. You must be logged in and have permission to add projects to the studio for this to not throw an error. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>project</strong> (<code class="highlight"><span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">IncompleteProject</span> <span class="o">|</span> <span class="n">RemixtreeProject</span> <span class="o">|</span> <span class="n">Project</span></code>) - The project to be added to the studio, either as an <code class="highlight"><span class="nb">int</span></code> or <code class="highlight"><span class="nb">str</span></code> representing the project's ID, or a corresponding project object.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="remove_project"><code class="highlight"><span class="n">remove_project</span><span class="p">(</span><span class="n">project</span><span class="p">)</span></code><a class="headerlink" href="#remove_project" title="Permanent link">&para;</a></h3>
-<p>Removes a project from the studio. You must be logged in and be a curator of the studio for this to not throw an error.</p>
+<p>Removes a project from the studio. You must be logged in and be a curator of the studio for this to not throw an error. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>project</strong> (<code class="highlight"><span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">IncompleteProject</span> <span class="o">|</span> <span class="n">RemixtreeProject</span> <span class="o">|</span> <span class="n">Project</span></code>) - The project to be removed from the studio, either as an <code class="highlight"><span class="nb">int</span></code> or <code class="highlight"><span class="nb">str</span></code> representing the project's ID, or a corresponding project object.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="get_projects"><code class="highlight"><span class="n">get_projects</span><span class="p">(</span><span class="nb">all</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span></code><a class="headerlink" href="#get_projects" title="Permanent link">&para;</a></h3>
 <p>Gets a list of projects in the studio. Returns an array of <a href="../Project">Project</a> objects.</p>
 <p><strong>PARAMETERS</strong></p>
@@ -1912,15 +1914,20 @@
 <span class="c1"># True</span>
 </code></pre></div>
 <h3 id="follow"><code class="highlight"><span class="n">follow</span><span class="p">()</span></code><a class="headerlink" href="#follow" title="Permanent link">&para;</a></h3>
-<p>Follows the studio. You must be logged in for this to not throw an error.</p>
+<p>Follows the studio. You must be logged in for this to not throw an error. Returns an HTTP status code.</p>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="unfollow"><code class="highlight"><span class="n">unfollow</span><span class="p">()</span></code><a class="headerlink" href="#unfollow" title="Permanent link">&para;</a></h3>
-<p>Unfollows the studio. You must be logged in for this to not throw an error.</p>
+<p>Unfollows the studio. You must be logged in for this to not throw an error. Returns an HTTP status code.</p>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="open_to_public"><code class="highlight"><span class="n">open_to_public</span><span class="p">()</span></code><a class="headerlink" href="#open_to_public" title="Permanent link">&para;</a></h3>
-<p>Opens the studio to the public so anyone can add projects. You must be logged in and a manager of the studio for this to not throw an error.</p>
+<p>Opens the studio to the public so anyone can add projects. You must be logged in and a manager of the studio for this to not throw an error. Returns an HTTP status code.</p>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="close_to_public"><code class="highlight"><span class="n">close_to_public</span><span class="p">()</span></code><a class="headerlink" href="#close_to_public" title="Permanent link">&para;</a></h3>
-<p>Closes the studio to the public so only curators can add projects. You must be logged in and a manager of the studio for this to not throw an error.</p>
+<p>Closes the studio to the public so only curators can add projects. You must be logged in and a manager of the studio for this to not throw an error. Returns an HTTP status code.</p>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="toggle_commenting"><code class="highlight"><span class="n">toggle_commenting</span><span class="p">()</span></code><a class="headerlink" href="#toggle_commenting" title="Permanent link">&para;</a></h3>
-<p>Toggles the ability for people to comment in the studio. You must be logged in and a manager of the studio for this to not throw an error.</p>
+<p>Toggles the ability for people to comment in the studio. You must be logged in and a manager of the studio for this to not throw an error. Returns an HTTP status code.</p>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="n">studio</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get_studio</span><span class="p">(</span><span class="mi">30136012</span><span class="p">)</span>
 <span class="n">studio</span><span class="o">.</span><span class="n">post_comment</span><span class="p">(</span><span class="s2">&quot;Scratch sucks so I&#39;m closing this studio&quot;</span><span class="p">)</span>
@@ -1966,7 +1973,7 @@
 <span class="n">session</span><span class="o">.</span><span class="n">get_project</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span><span class="o">.</span><span class="n">post_comment</span><span class="p">(</span><span class="s2">&quot;OMG first comment on the first studio on scratch&quot;</span><span class="p">,</span> <span class="n">parent_id</span><span class="o">=</span><span class="mi">25224</span><span class="p">,</span> <span class="n">commentee_id</span><span class="o">=</span><span class="mi">35153</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="delete_comment"><code class="highlight"><span class="n">delete_comment</span><span class="p">(</span><span class="n">comment_id</span><span class="p">)</span></code><a class="headerlink" href="#delete_comment" title="Permanent link">&para;</a></h3>
-<p>Deletes a comment on the studio. You must be logged in, a manager of the studio, and the author of the comment, for this to not throw an error.</p>
+<p>Deletes a comment on the studio. You must be logged in, a manager of the studio, and the author of the comment, for this to not throw an error. Returns an HTTP status code.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This is deprecated. It's recommended to use <code class="highlight"><span class="n">StudioComment</span><span class="o">.</span><span class="n">delete</span></code> instead. See <a href="../StudioComment#delete">this</a> for more details.</p>
@@ -1975,8 +1982,9 @@
 <ul>
 <li><strong>comment_id</strong> (<code class="highlight"><span class="nb">int</span></code>) - The ID of the comment to be deleted.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="report_comment"><code class="highlight"><span class="n">report_comment</span><span class="p">(</span><span class="n">comment_id</span><span class="p">)</span></code><a class="headerlink" href="#report_comment" title="Permanent link">&para;</a></h3>
-<p>Reports a comment on the studio. You must be logged in for this to not throw an error.</p>
+<p>Reports a comment on the studio. You must be logged in for this to not throw an error. Returns an HTTP status code.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This is deprecated. It's recommended to use <code class="highlight"><span class="n">StudioComment</span><span class="o">.</span><span class="n">report</span></code> instead. See <a href="../StudioComment#report">this</a> for more details.</p>
@@ -1985,41 +1993,50 @@
 <ul>
 <li><strong>comment_id</strong> (<code class="highlight"><span class="nb">int</span></code>) - The ID of the comment to be reported.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="invite_curator"><code class="highlight"><span class="n">invite_curator</span><span class="p">(</span><span class="n">user</span><span class="p">)</span></code><a class="headerlink" href="#invite_curator" title="Permanent link">&para;</a></h3>
-<p>Invites a user to become a curator of the studio. You must be logged in, and a manager of the studio, for this to not throw an error.</p>
+<p>Invites a user to become a curator of the studio. You must be logged in, and a manager of the studio, for this to not throw an error. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>user</strong> (<code class="highlight"><span class="nb">str</span> <span class="o">|</span> <span class="n">User</span> <span class="o">|</span> <span class="n">IncompleteUser</span></code>) - The username of the user to be invited, or an object representing the user.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="accept_curator"><code class="highlight"><span class="n">accept_curator</span><span class="p">(</span><span class="n">user</span><span class="p">)</span></code><a class="headerlink" href="#accept_curator" title="Permanent link">&para;</a></h3>
-<p>Accepts any pending curator invitations to the studio. You must be logged in, and having been invited to be a curator of the studio, for this to not throw an error.</p>
+<p>Accepts any pending curator invitations to the studio. You must be logged in, and having been invited to be a curator of the studio, for this to not throw an error. Returns an HTTP status code.</p>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="promote_curator"><code class="highlight"><span class="n">promote_curator</span><span class="p">(</span><span class="n">user</span><span class="p">)</span></code><a class="headerlink" href="#promote_curator" title="Permanent link">&para;</a></h3>
-<p>Promotes a user to a manager of the studio. You must be logged in, and a manager of the studio, for this to not throw an error.</p>
+<p>Promotes a user to a manager of the studio. You must be logged in, and a manager of the studio, for this to not throw an error. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>user</strong> (<code class="highlight"><span class="nb">str</span> <span class="o">|</span> <span class="n">User</span> <span class="o">|</span> <span class="n">IncompleteUser</span></code>) - The username of the user to be promoted, or an object representing the user. The user must already be a curator for this to not throw an error.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="transfer_host"><code class="highlight"><span class="n">transfer_host</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span></code><a class="headerlink" href="#transfer_host" title="Permanent link">&para;</a></h3>
-<p>Transfers ownership of the studio. You must be logged in, and the host of the studio, for this to not throw an error.</p>
+<p>Transfers ownership of the studio. You must be logged in, and the host of the studio, for this to not throw an error. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>user</strong> (<code class="highlight"><span class="nb">str</span> <span class="o">|</span> <span class="n">User</span> <span class="o">|</span> <span class="n">IncompleteUser</span></code>) - The username of the user that will become the new host, or an object representing the user. The user must already be a manager for this to not throw an error.</li>
 <li><strong>password</strong> (<code class="highlight"><span class="nb">str</span></code>) - The password to your account. This is necessary for authentication.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="set_description"><code class="highlight"><span class="n">set_description</span><span class="p">(</span><span class="n">description</span><span class="p">)</span></code><a class="headerlink" href="#set_description" title="Permanent link">&para;</a></h3>
-<p>Sets the description of the studio. You must be logged in, and the host of the studio, for this to not throw an error.</p>
+<p>Sets the description of the studio. You must be logged in, and the host of the studio, for this to not throw an error. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <p><strong>description</strong> (<code class="highlight"><span class="nb">str</span></code>) - The description that the description of the studio should be set to.</p>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="set_title"><code class="highlight"><span class="n">set_title</span><span class="p">(</span><span class="n">content</span><span class="p">)</span></code><a class="headerlink" href="#set_title" title="Permanent link">&para;</a></h3>
-<p>Sets the title of the studio. You must be logged in, and the host of the studio, for this to not throw an error.</p>
+<p>Sets the title of the studio. You must be logged in, and the host of the studio, for this to not throw an error. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <p><strong>content</strong> (<code class="highlight"><span class="nb">str</span></code>) - The title that the title of the studio should be set to.</p>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="set_thumbnail"><code class="highlight"><span class="n">set_thumbnail</span><span class="p">(</span><span class="n">file_or_data</span><span class="p">)</span></code><a class="headerlink" href="#set_thumbnail" title="Permanent link">&para;</a></h3>
-<p>Sets the thumbnail of the studio. You must be logged in, and the host of the studio, for this to not throw an error.</p>
+<p>Sets the thumbnail of the studio. You must be logged in, and the host of the studio, for this to not throw an error. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <p><strong>file_or_data</strong> (<code class="highlight"><span class="nb">bytes</span> <span class="o">|</span> <span class="nb">str</span></code>) - The file that the thumbnail should be set to. If this is a <code class="highlight"><span class="nb">str</span></code>, then it will be interpreted as a path to a file; otherwise, it will be interpreted as the data in the image.</p>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="delete"><code class="highlight"><span class="n">delete</span><span class="p">()</span></code><a class="headerlink" href="#delete" title="Permanent link">&para;</a></h3>
-<p>Deletes the studio. You must be logged in, and the host of the studio, for this to not throw an error.</p>
+<p>Deletes the studio. You must be logged in, and the host of the studio, for this to not throw an error. Returns an HTTP status code.</p>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 
 
 

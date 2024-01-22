@@ -1475,40 +1475,45 @@
 <span class="c1"># 90722</span>
 </code></pre></div>
 <h3 id="post_comment"><code class="highlight"><span class="n">post_comment</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">parent_id</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">commentee_id</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span></code><a class="headerlink" href="#post_comment" title="Permanent link">&para;</a></h3>
-<p>Posts a comment on the user's profile. You must be logged in for this to not throw an error.</p>
+<p>Posts a comment on the user's profile. You must be logged in for this to not throw an error. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>content</strong> (<code class="highlight"><span class="nb">str</span></code>) - The content of the comment to be posted.</li>
 <li><strong>parent_id</strong> (<code class="highlight"><span class="n">Optional</span><span class="p">[</span><span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]</span> <span class="o">|</span> <span class="nb">int</span><span class="p">]</span></code>) - If the comment to be posted is a reply, this is the comment ID of the parent comment. Otherwise, this is an empty string <code class="highlight"><span class="s2">&quot;&quot;</span></code>.</li>
 <li><strong>commentee_id</strong> (<code class="highlight"><span class="n">Optiona</span><span class="p">[</span><span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]</span> <span class="o">|</span> <span class="nb">int</span><span class="p">]</span></code>) - If the comment to be posted is a reply, this is the user ID of the author of the parent comment. Otherwise, this an empty string <code class="highlight"><span class="s2">&quot;&quot;</span></code>.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="n">session</span><span class="o">.</span><span class="n">get_user</span><span class="p">(</span><span class="s2">&quot;isthistaken123&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">post_comment</span><span class="p">(</span><span class="s2">&quot;hello my friend&quot;</span><span class="p">,</span> <span class="n">parent_id</span><span class="o">=</span><span class="mi">140441449</span><span class="p">,</span> <span class="n">commentee_id</span><span class="o">=</span><span class="mi">143585</span><span class="p">)</span>
 <span class="n">session</span><span class="o">.</span><span class="n">get_user</span><span class="p">(</span><span class="s2">&quot;griffpatch&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">post_comment</span><span class="p">(</span><span class="s2">&quot;f4f?!?!?!&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="delete_comment"><code class="highlight"><span class="n">delete_comment</span><span class="p">(</span><span class="n">comment_id</span><span class="p">)</span></code><a class="headerlink" href="#delete_comment" title="Permanent link">&para;</a></h3>
-<p>Deletes a comment on the user's profile with the specified <code class="highlight"><span class="n">comment_id</span></code>. You must be logged in, and be the owner of the profile, for this to not throw an error.</p>
+<p>Deletes a comment on the user's profile with the specified <code class="highlight"><span class="n">comment_id</span></code>. You must be logged in, and be the owner of the profile, for this to not throw an error. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>comment_id</strong> (<code class="highlight"><span class="nb">int</span></code>) - The ID of the comment to be deleted.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="report_comment"><code class="highlight"><span class="n">report_comment</span><span class="p">(</span><span class="n">comment_id</span><span class="p">)</span></code><a class="headerlink" href="#report_comment" title="Permanent link">&para;</a></h3>
-<p>Reports a comment on the user's profile with the specified <code class="highlight"><span class="n">comment_id</span></code>. You must be logged in for this to not throw an error.</p>
+<p>Reports a comment on the user's profile with the specified <code class="highlight"><span class="n">comment_id</span></code>. You must be logged in for this to not throw an error. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>comment_id</strong> (<code class="highlight"><span class="nb">int</span></code>) - The ID of the comment to be reported.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <h3 id="report"><code class="highlight"><span class="n">report</span><span class="p">(</span><span class="n">field</span><span class="p">)</span></code><a class="headerlink" href="#report" title="Permanent link">&para;</a></h3>
-<p>Reports the user for the reason specified in the <code class="highlight"><span class="n">field</span></code> parameter. You must be logged in for this to not throw an error.</p>
+<p>Reports the user for the reason specified in the <code class="highlight"><span class="n">field</span></code> parameter. You must be logged in for this to not throw an error. Returns an HTTP status code.</p>
 <p><strong>PARAMETERS</strong></p>
 <ul>
 <li><strong>field</strong> (<code class="highlight"><span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span> <span class="o">|</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;icon&quot;</span><span class="p">]</span> <span class="o">|</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">]</span> <span class="o">|</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;working_on&quot;</span><span class="p">]</span></code>) - The section of the user's profile that you are reporting them for. A value of <code class="highlight"><span class="s2">&quot;username&quot;</span></code> represents the user's username, a value of <code class="highlight"><span class="s2">&quot;icon&quot;</span></code> represents the user's avatar, a value of <code class="highlight"><span class="s2">&quot;description&quot;</span></code> represents the "About Me" section of the user's profile, and a value of <code class="highlight"><span class="s2">&quot;working_on&quot;</span></code> represents the "What I'm Working On" section of the user's profile.</li>
 </ul>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <p><strong>Example</strong>
 <div class="highlight"><pre><span></span><code><span class="n">session</span><span class="o">.</span><span class="n">get_user</span><span class="p">(</span><span class="s2">&quot;griffpatch_alt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="s2">&quot;username&quot;</span><span class="p">)</span>
 </code></pre></div></p>
 <h3 id="toggle_comments"><code class="highlight"><span class="n">toggle_commenting</span><span class="p">()</span></code><a class="headerlink" href="#toggle_comments" title="Permanent link">&para;</a></h3>
-<p>Toggles whether people can post comments on the user's profile. You must be logged in, and the owner of the profile, for this to not throw an error.</p>
+<p>Toggles whether people can post comments on the user's profile. You must be logged in, and the owner of the profile, for this to not throw an error. Returns an HTTP status code.</p>
+<p><strong>RETURNS</strong> - <code class="highlight"><span class="nb">int</span></code></p>
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="n">session</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">post_comment</span><span class="p">(</span><span class="s2">&quot;Aight im leaving scratch, unless I can get 4000 followers by tonight im out&quot;</span><span class="p">)</span>
 <span class="n">session</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">toggle_commenting</span><span class="p">()</span>
