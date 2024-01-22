@@ -53,20 +53,25 @@ The username of the user whose profile the comment is on.
 
 ###`#!python delete()` { #delete data-toc-label="delete" }
 
-Deletes the comment. You must be logged in and the owner of the profile the comment is on for this to not throw an error.
+Deletes the comment. You must be logged in and the owner of the profile the comment is on for this to not throw an error. Returns an HTTP status code.
+
+**RETURNS** - `#!python int`
 
 ###`#!python report()` { #report data-toc-label="report" }
 
-Reports the comment. You must be logged in for this to not throw an error.
+Reports the comment. You must be logged in for this to not throw an error. Returns an HTTP status code.
 
-###`#!python reply(content)` { #reply data-toc-label="reply" 
-}
+**RETURNS** - `#!python int`
 
-Replies to the comment. You must be logged in for this to not throw an error.
+###`#!python reply(content)` { #reply data-toc-label="reply" }
+
+Replies to the comment. You must be logged in for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
 - **content** (`#!python str`) - The content of your reply.
+
+**RETURNS** - `#!python int`
 
 **Example:**
 

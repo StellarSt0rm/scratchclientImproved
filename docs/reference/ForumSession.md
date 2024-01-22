@@ -4,13 +4,15 @@
 
 ###`#!python create_topic(category_id, title, body)` { #create_topic data-toc-label="create_topic" }
 
-Creates a forum topic. You must be logged in for this to not throw an error.
+Creates a forum topic. You must be logged in for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
 - **category_id** (`#!python int | str`) - The ID of the forum category you want to post in. For example, the ID of the "Suggestions" category is `#!python 31`.
 - **title** (`#!python str`) - The title of the original post in the topic.
 - **body** (`#!python str`) - The body of the original post in the topic.
+
+**RETURNS** - `#!python int`
 
 **Example:**
 
@@ -20,12 +22,14 @@ session.forums.create_topic(1, "Add like button to comments", "Title.\nSupporter
 
 ###`#!python post(topic_id, content)` { #post data-toc-label="post" }
 
-Posts a forum post on the specified topic.
+Posts a forum post on the specified topic. Returns an HTTP status code.
 
 **PARAMETERS**
 
 - **topic_id** (`#!python int | str`) - The ID of the topic you want to post on.
 - **content** (`#!python str`) - The content of the post.
+
+**RETURNS** - `#!python int`
 
 **Example:**
 
@@ -35,21 +39,25 @@ session.forums.post(506810, "This sucks")
 
 ###`#!python edit_post(post_id, content)` { #edit_post data-toc-label="edit_post" }
 
-Edits the forum post with the specified ID.
+Edits the forum post with the specified ID. Returns an HTTP status code.
 
 **PARAMETERS**
 
 - **post_id** (`#!python int | str`) - The ID of the post you want to edit.
 - **content** (`#!python str`) - The new content of the post.
 
+**RETURNS** - `#!python int`
+
 ###`#!python report_post(post_id, reason)` { #report_post data-toc-label="report_post" }
 
-Reports the forum post with the specified ID.
+Reports the forum post with the specified ID. Returns an HTTP status code.
 
 **PARAMETERS**
 
 - **post_id** (`#!python int | str`) - The ID of the post you want to report.
 - **reason** (`#!python str`) - The reason you want to report the post.
+
+**RETURNS** - `#!python int`
 
 ###`#!python get_post_source(post_id)` { #get_post_source data-toc-label="get_post_source" }
 
@@ -63,27 +71,33 @@ Gets the BBCode source of the forum post with the specified ID.
 
 ###`#!python follow_topic(topic_id)` { #follow_topic data-toc-label="follow_topic" }
 
-Follows the forum topic with the specified ID.
+Follows the forum topic with the specified ID. Returns an HTTP status code.
 
 **PARAMETERS**
 
 - **topic** (`#!python int | str`) - The ID of the topic you want to follow.
 
+**RETURNS** - `#!python int`
+
 ###`#!python unfollow_topic(topic_id)` { #unfollow_topic data-toc-label="unfollow_topic" }
 
-Unfollows the forum topic with the specified ID.
+Unfollows the forum topic with the specified ID. Returns an HTTP status code.
 
 **PARAMETERS**
 
 - **topic** (`#!python int | str`) - The ID of the topic you want to unfollow.
 
+**RETURNS** - `#!python int`
+
 ###`#!python change_signature(signature)` { #change_signature data-toc-label="change_signature" }
 
-Changes your forum signature to a new signature.
+Changes your forum signature to a new signature. Returns an HTTP status code.
 
 **PARAMETERS**
 
 - **signature** (`#!python str`) - The signature you want to change your signature to.
+
+**RETURNS** - `#!python int`
 
 ###`#!python get_latest_topic_posts(topic_id)` { #get_latest_topic_posts data-toc-label="get_latest_topic_posts" }
 

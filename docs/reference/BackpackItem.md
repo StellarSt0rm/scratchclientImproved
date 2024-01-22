@@ -30,7 +30,9 @@ The type of item that the item is.
 
 ###`#!python delete()` { #delete data-toc-label="delete" }
 
-Deletes the item.
+Deletes the item. Returns an HTTP status code.
+
+**RETURNS** - `#!python int`
 
 **Example:**
 

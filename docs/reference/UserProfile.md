@@ -54,11 +54,13 @@ print(session.get_user("griffpatch").profile.country)
 
 ###`#!python set_bio(content)` { #set_bio data-toc-label="set_bio" }
 
-Sets the bio ("About Me" section) of the user's profile to the specified content. You must be logged in and the owner of the profile for this to not throw an error.
+Sets the bio ("About Me" section) of the user's profile to the specified content. You must be logged in and the owner of the profile for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
 - **content** (`#!python str`) - The content that you want to set the bio to.
+
+**RETURNS** - `#!python int`
 
 **Example:**
 
@@ -72,19 +74,23 @@ print(profile.bio)
 
 ###`#!python set_status(content)` { #set_status data-toc-label="set_status" }
 
-Sets the status ("What I'm Working On" section) of the user's profile to the specified content. You must be logged in and the owner of the profile for this to not throw an error.
+Sets the status ("What I'm Working On" section) of the user's profile to the specified content. You must be logged in and the owner of the profile for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
 - **content** (`#!python str`) - The content that you want to set the status to.
 
+**RETURNS** - `#!python int`
+
 ###`#!python set_avatar(filename)` { #set_avatar data-toc-label="set_avatar" }
 
-Sets the user's avatar (profile picture) to the file with the specified `#!python filename`. You must be logged in and the owner of the profile for this to not throw an error.
+Sets the user's avatar (profile picture) to the file with the specified `#!python filename`. You must be logged in and the owner of the profile for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
 - **filename** (`#!python str`) - The path to a file containing the avatar image. Note that this must be a file, not binary data; if you wish to use binary data, you could try writing the data to a temporary file, then deleting it afterwards.
+
+**RETURNS** - `#!python int`
 
 ###`#!python get_featured_project()` { #get_featured_project data-toc-label="get_featured_project" }
 
@@ -101,7 +107,7 @@ print(session.get_user("griffpatch").get_featured_project().id)
 
 ###`#!python set_featured_project(label, project)` { #set_featured_project data-toc-label="set_featured_project" }
 
-Sets the user's featured project on their profile. You must be logged in and the owner of the profile for this to not throw an error.
+Sets the user's featured project on their profile. You must be logged in and the owner of the profile for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
@@ -113,6 +119,8 @@ Sets the user's featured project on their profile. You must be logged in and the
     - `#!python "my_favorite_things"` - Representing "My Favorite Things".
     - `#!python "why_i_scratch"` - Representing "Why I Scratch".
 - **project** (`#!python int | Project | IncompleteProject | RemixtreeProject`) - The project to be set as the featured project. This must either be an `#!python int` representing the project's ID or a corresponding project object.
+
+**RETURNS** - `#!python int`
 
 **Example:**
 

@@ -70,7 +70,9 @@ The studio that the comment is on, as a [Studio](../Studio) object.
 
 ###`#!python delete()` { #delete data-toc-label="delete" }
 
-Deletes the comment. You must be logged in, the author of the comment, and a manager of the studio that the comment is on for this to not throw an error.
+Deletes the comment. You must be logged in, the author of the comment, and a manager of the studio that the comment is on for this to not throw an error. Returns an HTTP status code.
+
+**RETURNS** - `#!python int`
 
 **Example:**
 
@@ -83,10 +85,11 @@ for comment in studio.get_comments(all=True):
 
 ###`#!python report()` { #report data-toc-label="report" }
 
-Reports the comment. You must be logged in for this to not throw an error.
+Reports the comment. You must be logged in for this to not throw an error. Returns an HTTP status code.
 
-###`#!python reply(content)` { #reply data-toc-label="reply" 
-}
+**RETURNS** - `#!python int`
+
+###`#!python reply(content)` { #reply data-toc-label="reply" }
 
 Replies to the comment. You must be logged in for this to not throw an error. Returns the reply once it is posted as a [StudioComment](../StudioComment).
 

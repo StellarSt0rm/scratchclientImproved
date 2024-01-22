@@ -145,13 +145,15 @@ print(session.get_user("isthistaken123").get_message_count())
 
 ###`#!python post_comment(content, parent_id="", commentee_id="")` { #post_comment data-toc-label="post_comment" }
 
-Posts a comment on the user's profile. You must be logged in for this to not throw an error.
+Posts a comment on the user's profile. You must be logged in for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
 - **content** (`#!python str`) - The content of the comment to be posted.
 - **parent_id** (`#!python Optional[Literal[""] | int]`) - If the comment to be posted is a reply, this is the comment ID of the parent comment. Otherwise, this is an empty string `#!python ""`.
 - **commentee_id** (`#!python Optiona[Literal[""] | int]`) - If the comment to be posted is a reply, this is the user ID of the author of the parent comment. Otherwise, this an empty string `#!python ""`.
+
+**RETURNS** - `#!python int`
 
 **Example:**
 
@@ -162,27 +164,33 @@ session.get_user("griffpatch").post_comment("f4f?!?!?!")
 
 ###`#!python delete_comment(comment_id)` { #delete_comment data-toc-label="delete_comment" }
 
-Deletes a comment on the user's profile with the specified `#!python comment_id`. You must be logged in, and be the owner of the profile, for this to not throw an error.
+Deletes a comment on the user's profile with the specified `#!python comment_id`. You must be logged in, and be the owner of the profile, for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
 - **comment_id** (`#!python int`) - The ID of the comment to be deleted.
 
+**RETURNS** - `#!python int`
+
 ###`#!python report_comment(comment_id)` { #report_comment data-toc-label="report_comment" }
 
-Reports a comment on the user's profile with the specified `#!python comment_id`. You must be logged in for this to not throw an error.
+Reports a comment on the user's profile with the specified `#!python comment_id`. You must be logged in for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
 - **comment_id** (`#!python int`) - The ID of the comment to be reported.
 
+**RETURNS** - `#!python int`
+
 ###`#!python report(field)` { #report data-toc-label="report" }
 
-Reports the user for the reason specified in the `#!python field` parameter. You must be logged in for this to not throw an error.
+Reports the user for the reason specified in the `#!python field` parameter. You must be logged in for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
 - **field** (`#!python Literal["username"] | Literal["icon"] | Literal["description"] | Literal["working_on"]`) - The section of the user's profile that you are reporting them for. A value of `#!python "username"` represents the user's username, a value of `#!python "icon"` represents the user's avatar, a value of `#!python "description"` represents the "About Me" section of the user's profile, and a value of `#!python "working_on"` represents the "What I'm Working On" section of the user's profile.
+
+**RETURNS** - `#!python int`
 
 **Example**
 ```python
@@ -191,7 +199,9 @@ session.get_user("griffpatch_alt").report("username")
 
 ###`#!python toggle_commenting()` { #toggle_comments data-toc-label="toggle_comments" }
 
-Toggles whether people can post comments on the user's profile. You must be logged in, and the owner of the profile, for this to not throw an error.
+Toggles whether people can post comments on the user's profile. You must be logged in, and the owner of the profile, for this to not throw an error. Returns an HTTP status code.
+
+**RETURNS** - `#!python int`
 
 **Example:**
 

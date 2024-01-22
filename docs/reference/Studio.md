@@ -114,19 +114,23 @@ print(session.get_studio(14).get_comment(25224).content)
 
 ###`#!python add_project(project)` { #add_project data-toc-label="add_project" }
 
-Adds a project to the studio. You must be logged in and have permission to add projects to the studio for this to not throw an error.
+Adds a project to the studio. You must be logged in and have permission to add projects to the studio for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
 - **project** (`#!python int | str | IncompleteProject | RemixtreeProject | Project`) - The project to be added to the studio, either as an `#!python int` or `#!python str` representing the project's ID, or a corresponding project object.
 
+**RETURNS** - `#!python int`
+
 ###`#!python remove_project(project)` { #remove_project data-toc-label="remove_project" }
 
-Removes a project from the studio. You must be logged in and be a curator of the studio for this to not throw an error.
+Removes a project from the studio. You must be logged in and be a curator of the studio for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
 - **project** (`#!python int | str | IncompleteProject | RemixtreeProject | Project`) - The project to be removed from the studio, either as an `#!python int` or `#!python str` representing the project's ID, or a corresponding project object.
+
+**RETURNS** - `#!python int`
 
 ###`#!python get_projects(all=False, limit=20, offset=0)` { #get_projects data-toc-label="get_projects" }
 
@@ -209,23 +213,33 @@ print(studio.get_roles()["following"])
 
 ###`#!python follow()` { #follow data-toc-label="follow" }
 
-Follows the studio. You must be logged in for this to not throw an error.
+Follows the studio. You must be logged in for this to not throw an error. Returns an HTTP status code.
+
+**RETURNS** - `#!python int`
 
 ###`#!python unfollow()` { #unfollow data-toc-label="unfollow" }
 
-Unfollows the studio. You must be logged in for this to not throw an error.
+Unfollows the studio. You must be logged in for this to not throw an error. Returns an HTTP status code.
+
+**RETURNS** - `#!python int`
 
 ###`#!python open_to_public()` { #open_to_public data-toc-label="open_to_public" }
 
-Opens the studio to the public so anyone can add projects. You must be logged in and a manager of the studio for this to not throw an error.
+Opens the studio to the public so anyone can add projects. You must be logged in and a manager of the studio for this to not throw an error. Returns an HTTP status code.
+
+**RETURNS** - `#!python int`
 
 ###`#!python close_to_public()` { #close_to_public data-toc-label="close_to_public" }
 
-Closes the studio to the public so only curators can add projects. You must be logged in and a manager of the studio for this to not throw an error.
+Closes the studio to the public so only curators can add projects. You must be logged in and a manager of the studio for this to not throw an error. Returns an HTTP status code.
+
+**RETURNS** - `#!python int`
 
 ###`#!python toggle_commenting()` { #toggle_commenting data-toc-label="toggle_commenting" }
 
-Toggles the ability for people to comment in the studio. You must be logged in and a manager of the studio for this to not throw an error.
+Toggles the ability for people to comment in the studio. You must be logged in and a manager of the studio for this to not throw an error. Returns an HTTP status code.
+
+**RETURNS** - `#!python int`
 
 **Example:**
 
@@ -294,7 +308,7 @@ session.get_project(14).post_comment("OMG first comment on the first studio on s
 
 ###`#!python delete_comment(comment_id)` { #delete_comment data-toc-label="delete_comment" }
 
-Deletes a comment on the studio. You must be logged in, a manager of the studio, and the author of the comment, for this to not throw an error.
+Deletes a comment on the studio. You must be logged in, a manager of the studio, and the author of the comment, for this to not throw an error. Returns an HTTP status code.
 
 !!! warning
 
@@ -304,9 +318,11 @@ Deletes a comment on the studio. You must be logged in, a manager of the studio,
 
 - **comment_id** (`#!python int`) - The ID of the comment to be deleted.
 
+**RETURNS** - `#!python int`
+
 ###`#!python report_comment(comment_id)` { #report_comment data-toc-label="report_comment" }
 
-Reports a comment on the studio. You must be logged in for this to not throw an error.
+Reports a comment on the studio. You must be logged in for this to not throw an error. Returns an HTTP status code.
 
 !!! warning
 
@@ -316,59 +332,77 @@ Reports a comment on the studio. You must be logged in for this to not throw an 
 
 - **comment_id** (`#!python int`) - The ID of the comment to be reported.
 
+**RETURNS** - `#!python int`
+
 ###`#!python invite_curator(user)` { #invite_curator data-toc-label="invite_curator" }
 
-Invites a user to become a curator of the studio. You must be logged in, and a manager of the studio, for this to not throw an error.
+Invites a user to become a curator of the studio. You must be logged in, and a manager of the studio, for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
 - **user** (`#!python str | User | IncompleteUser`) - The username of the user to be invited, or an object representing the user.
 
+**RETURNS** - `#!python int`
+
 ###`#!python accept_curator(user)` { #accept_curator data-toc-label="accept_curator" }
 
-Accepts any pending curator invitations to the studio. You must be logged in, and having been invited to be a curator of the studio, for this to not throw an error.
+Accepts any pending curator invitations to the studio. You must be logged in, and having been invited to be a curator of the studio, for this to not throw an error. Returns an HTTP status code.
+
+**RETURNS** - `#!python int`
 
 ###`#!python promote_curator(user)` { #promote_curator data-toc-label="promote_curator" }
 
-Promotes a user to a manager of the studio. You must be logged in, and a manager of the studio, for this to not throw an error.
+Promotes a user to a manager of the studio. You must be logged in, and a manager of the studio, for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
 - **user** (`#!python str | User | IncompleteUser`) - The username of the user to be promoted, or an object representing the user. The user must already be a curator for this to not throw an error.
 
+**RETURNS** - `#!python int`
+
 ###`#!python transfer_host(user, password)` { #transfer_host data-toc-label="transfer_host" }
 
-Transfers ownership of the studio. You must be logged in, and the host of the studio, for this to not throw an error.
+Transfers ownership of the studio. You must be logged in, and the host of the studio, for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
 - **user** (`#!python str | User | IncompleteUser`) - The username of the user that will become the new host, or an object representing the user. The user must already be a manager for this to not throw an error.
 - **password** (`#!python str`) - The password to your account. This is necessary for authentication.
 
+**RETURNS** - `#!python int`
+
 ###`#!python set_description(description)` { #set_description data-toc-label="set_description" }
 
-Sets the description of the studio. You must be logged in, and the host of the studio, for this to not throw an error.
+Sets the description of the studio. You must be logged in, and the host of the studio, for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
 **description** (`#!python str`) - The description that the description of the studio should be set to.
 
+**RETURNS** - `#!python int`
+
 ###`#!python set_title(content)` { #set_title data-toc-label="set_title" }
 
-Sets the title of the studio. You must be logged in, and the host of the studio, for this to not throw an error.
+Sets the title of the studio. You must be logged in, and the host of the studio, for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
 **content** (`#!python str`) - The title that the title of the studio should be set to.
 
+**RETURNS** - `#!python int`
+
 ###`#!python set_thumbnail(file_or_data)` { #set_thumbnail data-toc-label="set_thumbnail" }
 
-Sets the thumbnail of the studio. You must be logged in, and the host of the studio, for this to not throw an error.
+Sets the thumbnail of the studio. You must be logged in, and the host of the studio, for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
 **file_or_data** (`#!python bytes | str`) - The file that the thumbnail should be set to. If this is a `#!python str`, then it will be interpreted as a path to a file; otherwise, it will be interpreted as the data in the image.
 
+**RETURNS** - `#!python int`
+
 ###`#!python delete()` { #delete data-toc-label="delete" }
 
-Deletes the studio. You must be logged in, and the host of the studio, for this to not throw an error.
+Deletes the studio. You must be logged in, and the host of the studio, for this to not throw an error. Returns an HTTP status code.
+
+**RETURNS** - `#!python int`

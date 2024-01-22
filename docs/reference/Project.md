@@ -190,11 +190,13 @@ print(f"The first sprite is called '{scripts['targets'][1]['name']}'")
 
 ###`#!python save(project)` { #save data-toc-label="save" }
 
-Saves the project with the scripts specified in the parameter `#!python project`.
+Saves the project with the scripts specified in the parameter `#!python project`. Returns an HTTP status code.
 
 **PARAMETERS**
 
 - **project** (`#!python dict`) - The scripts to be put in the project, with the same format as the `project.json` file found in ordinary projects.
+
+**RETURNS** - `#!python int`
 
 ###`#!python get_remixes(all=False, limit=20, offset=0)` { #get_remixes data-toc-label="get_remixes" }
 
@@ -354,7 +356,7 @@ project.turn_off_commenting()
 
 ###`#!python report(category, reason, image=None)` { #report data-toc-label="report" }
 
-Reports the project, for the specified `#!python category` and `#!python reason`. You must be logged in for this to not throw an error.
+Reports the project, for the specified `#!python category` and `#!python reason`. You must be logged in for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
@@ -379,6 +381,8 @@ Reports the project, for the specified `#!python category` and `#!python reason`
 - **reason** (`#!python str`) - Additional info regarding the location of the offending content within the project.
 - **image** (`#!python Optional[str | None]`) - The base-64-encoded thumbnail of the project.
 
+**RETURNS** - `#!python int`
+
 **Example:**
 
 ```python
@@ -387,43 +391,57 @@ session.get_project(104).report("10", "the guy's face is in the project")
 
 ###`#!python unshare()` { #unshare data-toc-label="unshare" }
 
-Unshares the project. You must be logged in, and the owner of the project, for this to not throw an error.
+Unshares the project. You must be logged in, and the owner of the project, for this to not throw an error. Returns an HTTP status code.
+
+**RETURNS** - `#!python int`
 
 ###`#!python share()` { #share data-toc-label="share" }
 
-Shares the project. You must be logged in, and the owner of the project, for this to not throw an error.
+Shares the project. You must be logged in, and the owner of the project, for this to not throw an error. Returns an HTTP status code.
+
+**RETURNS** - `#!python int`
 
 ###`#!python delete()` { #delete data-toc-label="delete" }
 
-Deletes the project. You must be logged in, and the owner of the project, for this to not throw an error.
+Deletes the project. You must be logged in, and the owner of the project, for this to not throw an error. Returns an HTTP status code.
+
+**RETURNS** - `#!python int`
 
 ###`#!python restore_deleted()` { #restore_deleted data-toc-label="restore_deleted" }
 
-Restores the project if it has been deleted. You must be logged in, and the owner of the project, for this to not throw an error.
+Restores the project if it has been deleted. You must be logged in, and the owner of the project, for this to not throw an error. Returns an HTTP status code.
+
+**RETURNS** - `#!python int`
 
 ###`#!python view()` { #view data-toc-label="view" }
 
-Views the project (increments its view count).
+Views the project (increments its view count). Returns an HTTP status code.
 
 !!! warning
 
     This is incredibly easy to abuse, but do not as the Scratch Team will not be happy, and they will be able to figure out who you are. Furthermore, this is heavily ratelimited, so it's not very effective anyway.
 
+**RETURNS** - `#!python int`
+
 ###`#!python set_thumbnail(file_or_data)` { #set_thumbnail data-toc-label="set_thumbnail" }
 
-Sets the thumbnail of the project. You must be logged in, and the owner of the project, for this to not throw an error.
+Sets the thumbnail of the project. You must be logged in, and the owner of the project, for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
 **file_or_data** (`#!python bytes | str`) - The file that the thumbnail should be set to. If this is a `#!python str`, then it will be interpreted as a path to a file; otherwise, it will be interpreted as the data in the image.
 
+**RETURNS** - `#!python int`
+
 ###`#!python set_title(title)` { #set_title data-toc-label="title" }
 
-Sets the title of the project. You must be logged in, and the owner of the project, for this to not throw an error.
+Sets the title of the project. You must be logged in, and the owner of the project, for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
 **title** (`#!python str`) - The title that the title of the project should be set to.
+
+**RETURNS** - `#!python int`
 
 **Example:**
 
@@ -433,16 +451,20 @@ session.get_project(130921903123).set_title("4D platformer #games #all ?mode=tre
 
 ###`#!python set_instructions(instructions)` { #set_instructions data-toc-label="set_instructions" }
 
-Sets the instructions of the project. You must be logged in, and the owner of the project, for this to not throw an error.
+Sets the instructions of the project. You must be logged in, and the owner of the project, for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
 **instructions** (`#!python str`) - The instructions that the instructions of the project should be set to.
 
+**RETURNS** - `#!python int`
+
 ###`#!python set_description(description)` { #set_description data-toc-label="set_description" }
 
-Sets the description (the "Notes and Credits" field) of the project.
+Sets the description (the "Notes and Credits" field) of the project. Returns an HTTP status code.
 
 **PARAMETERS**
 
 **description** (`#!python str`) - The description that the description of the project should be set to. You must be logged in, and the owner of the project, for this to not throw an error.
+
+**RETURNS** - `#!python int`

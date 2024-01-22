@@ -290,7 +290,7 @@ Creates a studio. You must be logged in for this to not throw an error. Returns 
 
 ###`#!python empty_trash(password)` { #empty_trash data-toc-label="empty_trash" }
 
-Empties your trash (your deleted projects). You must be logged in for this to not throw an error. Returns a HTTP status code.
+Empties your trash (your deleted projects). You must be logged in for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
@@ -351,7 +351,7 @@ Gets your own studios, sorted in descending order. You must be logged in for thi
 
 ###`#!python upload_asset(asset, file_ext=None)` { #upload_asset data-toc-label="upload_asset" }
 
-Uploads an asset to `assets.scratch.mit.edu`. You must be logged in for this to not throw an error. Returns a HTTP status code.
+Uploads an asset to `assets.scratch.mit.edu`. You must be logged in for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
@@ -362,7 +362,7 @@ Uploads an asset to `assets.scratch.mit.edu`. You must be logged in for this to 
 
 ###`#!python change_country(country)` { #change_country data-toc-label="change_country" }
 
-Changes the logged in user's country. You must be logged in for this to not throw an error. Returns a HTTP status code.
+Changes the logged in user's country. You must be logged in for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
@@ -378,7 +378,7 @@ session.change_country("Antarctica")
 
 ###`#!python change_password(old_password, new_password)` { #change_password data-toc-label="change_password" }
 
-Changes the logged in user's account's password. You must be logged in for this to not throw an error. Returns a HTTP status code.
+Changes the logged in user's account's password. You must be logged in for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
@@ -389,7 +389,7 @@ Changes the logged in user's account's password. You must be logged in for this 
 
 ###`#!python change_email(new_email, password)` { #change_email data-toc-label="change_email" }
 
-Changes the logged in user's account's email. You must be logged in for this to not throw an error. Returns a HTTP status code.
+Changes the logged in user's account's email. You must be logged in for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
@@ -400,7 +400,7 @@ Changes the logged in user's account's email. You must be logged in for this to 
 
 ###`#!python change_email_subscription(activities=False, teacher_tips=False)` { #change_email_subscription data-toc-label="change_email_subscription" }
 
-Sets what you will receive emails from Scratch for. You must be logged in for this to not throw an error. Returns a HTTP status code.
+Sets what you will receive emails from Scratch for. You must be logged in for this to not throw an error. Returns an HTTP status code.
 
 **PARAMETERS**
 
