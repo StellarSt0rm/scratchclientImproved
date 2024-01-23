@@ -2,6 +2,8 @@
 Improved version of the Scratch API wrapper by CubeyTheCube.
 I will mainly fix errors.
 
+Original Repo Available Here: https://github.com/CubeyTheCube/scratchclient
+
 ## Installation
 
 Go to your terminal (Not your Python shell) and execute this command:
